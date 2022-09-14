@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy, useEffect, useState } from "react";
+import {SplashScreen, Error404} from 'components/standalone';
+import getSessionByToken from 'services/getSessionByToken';
+import { Navigate, Route, Routes } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Home = lazy(() => import('pages/Home/Home'));
+const SignUp = lazy(() => import('pages/SignUp/SignUp'));
+
+/**Application's global component.*/
+export default function App(): JSX.Element {
+
+    const [auth, setAuth] = useState(undefined);
+
+    useEffect(()=> {tryGettingAuthorization()}, []);
+
+    async function tryGettingAuthorization() {
+        const response = await getSessionByToken();
+        setAuth(response.ok);
+    }
+
+
+    return auth === undefined ? <SplashScreen /> :
+        
+    <Suspense fallback={<SplashScreen />}>
+        <Routes>
+
+            <Route index               element={<Home auth={auth} />} />
+            <Route path="/registrarse" element={<SignUp/>} />     
+
+        </Routes>
+    </Suspense>
 }
-
-export default App;
