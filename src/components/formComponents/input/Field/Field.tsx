@@ -20,7 +20,7 @@ type props = {
  */
 export default function Field({ label = "", note, placeholder, type = "text", bind, validator=true }: props): JSX.Element {
     return (
-        <label> {label}
+        <label style={{marginTop:'1rem'}}> {label}
         <span> {note}</span>
             <input
                 className={validator?"field":"field invalid"}

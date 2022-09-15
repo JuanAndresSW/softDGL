@@ -1,0 +1,30 @@
+[data-museum-banner] {
+  min-height: 14rem;
+  padding: 2rem 0 0 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #111;
+}
+
+[data-museum-banner] > img {
+  background-color: #ccc;
+  border-radius: 15px;
+  float: left;
+  height: 12rem;
+  margin-right: 2rem;
+}
+
+[data-museum-banner] > h2 {
+  font-size: 2rem;
+}
+
+[data-museum-banner] > div {
+  margin: 0;
+  display: inline-block;
+  min-width: "200px";
+}
+
+[data-museum-banner] > div > * {
+  margin-right: 1rem;
+  display: inline;
+}
+/*# sourceMappingURL=MuseumBanner.css.map */

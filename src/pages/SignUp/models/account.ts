@@ -4,6 +4,10 @@ type account = {
     email: string,
     password: string,
     museumName: string,
-    coordinates: string
+    province: string,
+    city: string,
+    street: string,
+    addressNumber: number
+
 }
 export default account;

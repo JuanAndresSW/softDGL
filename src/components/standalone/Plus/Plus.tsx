@@ -8,10 +8,10 @@ import './Plus.css';
 /**
  * Una opción de navegación con el símbolo '+'.
  */
-export default function Plus({link}:{link:string}): JSX.Element {
+export default function Plus({onClick}:{onClick?:Function}): JSX.Element {
     return (
-        <Link to={link} className="plus">
+        <div onClick={()=>onClick()} className="plus">
             <MdAddCircleOutline />
-        </Link>
+        </div>
     );
 }

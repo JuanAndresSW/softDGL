@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo from "assets/svg/logo.svg";
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import './Header.css';
-import Headroom from "react-headroom";
 
 type props = {
   auth: boolean
@@ -24,9 +23,7 @@ return (
 
 
     <div id="header-links">
-      <Headroom>
-        <button type="button"><Link to={"/registrarse"}>nuevo museo</Link></button>
-      </Headroom>
+      <button type="button"><Link to={"/registrarse"}>nuevo museo</Link></button>
 
       <Link to={"/ingresar"}>Ingresar</Link>
       <a href="about:blank" target="_blank">Aplicación móvil</a>

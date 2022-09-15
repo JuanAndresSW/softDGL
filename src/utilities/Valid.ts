@@ -52,10 +52,6 @@ export default class Valid {
     return false;
   }
 
-  public static address(address: string): boolean {
-    return address?.length <= 40 && address.length >= 4;
-  }
-
   public static postalCode(postalCode: string, setError?: Function): boolean {
     if  (/^\d{4}$/.test(postalCode)) return true;
     if (setError) setError("Ingrese un código postal de 4 dígitos");
@@ -79,7 +75,7 @@ export default class Valid {
   }
 
   public static addressNumber(addressNumber: number, setError?: Function): boolean {
-    if (/^[1-9]{1}\d{0,4}$/.test(addressNumber?.toLocaleString())) return true;
+    if (/^[1-9]{1}\d{0,3}$/.test(addressNumber?.toLocaleString())) return true;
     if (setError) setError("Ingrese un número de dirección");
     return false;
   }

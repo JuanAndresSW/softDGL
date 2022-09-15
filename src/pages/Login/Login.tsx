@@ -6,7 +6,6 @@ import tryLogin from "./services/tryLogin";
 
 //Utilidades.
 import Valid from "utilities/Valid";
-import Response from 'models/Response';
 
 //Componentes de formulario.
 import {Form, Field, Message, Button} from 'components/formComponents';
@@ -26,15 +25,13 @@ export default function Login(): JSX.Element {
     return setError("Usuario o contraseña incorrecta");
 
     setLoading(true);
-    const response = tryLogin(usernameOrEmail, password);
-    sideEffects(response);
+    tryLogin(usernameOrEmail, password).then(response=>{
+      setLoading(false);
+      if (!response.ok) return setError(error);
+      setError(""); 
+    })
   };
 
-  function sideEffects(response: Response):void {
-    setLoading(false);
-    if (!response.ok) return setError(error);
-    setError("");
-  }
 
   return (
     <Form onSubmit={submit} title="Iniciar sesión">

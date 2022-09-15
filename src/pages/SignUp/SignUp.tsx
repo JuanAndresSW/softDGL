@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { provinces } from "utilities/constants";
 
 //Componentes de formulario.
-import { Button, Field, Form, Message } from 'components/formComponents';
+import { Button, Field, Form, Message, Select } from 'components/formComponents';
 import { Loading } from "components/standalone";
 import { FlexDiv } from "components/wrappers";
 import { BiChevronLeft, BiHome } from "react-icons/bi";
@@ -19,7 +20,7 @@ export default function SignUp(): JSX.Element {
   
 
   //Controladores del estado del formulario.
-  const [sending, setSending] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
   /*DATOS DEL FORMULARIO*****************************************************/
@@ -30,9 +31,12 @@ export default function SignUp(): JSX.Element {
   const [password, setPassword]           = useState("");
   const [passwordMatch, setPasswordMatch] = useState("");
   const [museumName, setMuseumName]       = useState("");
-  const [coordinates, setCoordinates]     = useState("");
+  const [province, setProvince]           = useState("Misiones");
+  const [city, setCity]                   = useState("");
+  const [street, setStreet]               = useState("");
+  const [addressNumber, setAddressNumber] = useState();
   
-  const [error, setError]         = useState("");
+  const [error, setError]                 = useState("");
 
 
   /*VALIDACIÓN***************************************************************/
@@ -41,11 +45,14 @@ export default function SignUp(): JSX.Element {
     setError("");
 
     if (!Valid.names(username, setError))     return false;
-
     if (!Valid.email(email, setError))        return false;
-
     if (!Valid.password(password, setError))  return false;
     if (password !== passwordMatch) {setError("Las contraseñas no coinciden"); return false}
+
+    if (!Valid.names(museumName)) {setError("El nombre del museo debe ser de entre 3 y 20 caracteres"); return false}
+    if (!Valid.names(city)) {setError("El nombre de la ciudad debe ser de entre 3 y 20 caracteres");    return false}
+    if (!Valid.names(street)) {setError("El nombre de la calle debe ser de entre 3 y 20 caracteres");   return false}
+    if (!Valid.addressNumber(addressNumber, setError)) return false;
 
     return true;
   };
@@ -61,20 +68,20 @@ export default function SignUp(): JSX.Element {
       email: email,
       password: password,
       museumName: museumName,
-      coordinates: coordinates
+      province: province,
+      city: city,
+      street: street,
+      addressNumber: addressNumber
     }
-    setSending(true);
-    
-    setSending(false);
-    const response = await postAccount(account)
-    
-    
-    if (!response.ok) return setError(response.message);
-    
-    setSuccess(true);
-    setError("");
-    navigate("/inicio"); 
 
+    setLoading(true);
+    postAccount(account).then(response=>{
+      setLoading(false);
+      if (!response.ok) return setError(response.message);
+      setSuccess(true);
+      setError("");
+      navigate("/inicio");
+    })
   }
 
   /*FORMULARIO*****************************************************/
@@ -99,21 +106,32 @@ export default function SignUp(): JSX.Element {
       <Field label="¿Cómo se llamará tu museo?" bind={[museumName, setMuseumName]}
       validator={Valid.names(museumName)} />
 
-     
-      <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-         
+      <FlexDiv>
+        <Select options={provinces} value={province} onChange={setProvince} />
+      </FlexDiv>
 
-    
+      <FlexDiv>
+        <Field label="Ciudad" bind={[city, setCity]}
+        validator={Valid.names(city)} />
+        <Field label="Calle" bind={[street, setStreet]}
+        validator={Valid.names(street)} />
+        <Field label="Altura" bind={[addressNumber, setAddressNumber]}
+        validator={Valid.addressNumber(addressNumber)} />
+      </FlexDiv>
+
             
       <Message type="error" message={error} />
 
       <FlexDiv justify='space-between'>
         <Link to="/ingresar">Acceder</Link>
 
-        <Button type="submit">Siguiente</Button>
+        {loading?<Loading/>:<Button type="submit">Crear</Button>}
       </FlexDiv>
 
     </Form>
    
   );
 }
+
+//backup
+//

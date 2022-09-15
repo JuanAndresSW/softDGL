@@ -10,7 +10,7 @@ import Response from 'models/Response';
 export default async function ajax(method:("GET"|"POST"|"PUT"|"DELETE"|"HEAD"), url: string, 
 content: {body?:string, token?: string}): Promise<Response> {
 
-  const response = await fetch(url, {
+  const response = await fetch(process.env.REACT_APP_API+url, {
     method: method,
     mode: 'cors',
     cache: 'no-cache',

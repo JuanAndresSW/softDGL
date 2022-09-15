@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
       <div>
         <a
-          href="https://github.com/conjunto-solucion"
+          href="https://github.com/conjunto-solucion/partenon"
           className="github"
         >
           <DiGithubBadge />
