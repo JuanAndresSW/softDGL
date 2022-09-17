@@ -7,7 +7,13 @@ import lombok.*;
 @EqualsAndHashCode(callSuper = false)
 @Data
 public class MuseumProjection {
-    private final String museumBannerBanner;
-    private final String museumName;
-    private final String museumDescriptionDescription;
+    private String museumId;
+    private String name;
+    private String banner;
+    private String description;
+
+    public MuseumProjection(Long museumId, String name){
+        this.museumId = String.valueOf(museumId);
+        this.name = name;
+    }
 }

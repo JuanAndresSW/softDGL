@@ -24,9 +24,6 @@ public final class UserRestModel {
     @NotEmpty
     @Size(min = 2, max = 20)
     private String museumName;
-
-    @NotEmpty
-    private String country;
     @NotEmpty
     private String province;
     @NotEmpty

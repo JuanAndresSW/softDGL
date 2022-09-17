@@ -1,9 +1,7 @@
 package dev.partenon.museum.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
@@ -15,15 +13,18 @@ import java.util.UUID;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class MuseumBanner implements Serializable {
     public static final Long serialVersionUID = 1L;
 
+    @JsonIgnore
     @Id
     @Column(name = "museum_banner_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long museumBannerId;
 
+    @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false)
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private Museum museum;

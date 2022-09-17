@@ -28,6 +28,7 @@ public class RefreshQueryHandler implements QueryHandler<TokenUpdated, RefreshQu
                         new User(user.getUserId(), user.getUsername()), "http://localhost:8080/api/auth/refresh"))
                 .refreshToken(jwtProvider.createRefreshToken(
                         new User(user.getUserId(), user.getUsername())))
+                .museumId(String.valueOf(user.getMuseumId()))
                 .build();
         return tokenUpdated;
     }

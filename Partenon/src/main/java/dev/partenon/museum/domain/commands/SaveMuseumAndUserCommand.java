@@ -23,9 +23,6 @@ public class SaveMuseumAndUserCommand extends Command {
     private String museumName;
     @NotEmpty
     @Size(min = 2, max = 20)
-    private String country;
-    @NotEmpty
-    @Size(min = 2, max = 20)
     private String province;
     @NotEmpty
     @Size(min = 2, max = 20)

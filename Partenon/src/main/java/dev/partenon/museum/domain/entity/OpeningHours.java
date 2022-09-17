@@ -1,5 +1,6 @@
 package dev.partenon.museum.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.museum.domain.commands.SaveOpeningHoursCommand;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,11 +21,13 @@ import java.util.UUID;
 public final class OpeningHours implements Serializable {
     public static final Long serialVersionUID = 1L;
 
+    @JsonIgnore
     @Id
     @Column(name = "opening_hours_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long openingHoursId;
 
+    @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false)
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.MERGE})
     private Museum museum;

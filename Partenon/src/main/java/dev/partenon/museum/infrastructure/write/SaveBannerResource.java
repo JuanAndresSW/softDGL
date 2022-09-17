@@ -1,4 +1,4 @@
-package dev.partenon.museum.infrastructure;
+package dev.partenon.museum.infrastructure.write;
 
 import dev.partenon.global.domain.abstractcomponents.command.CommandBus;
 import dev.partenon.museum.domain.commands.SaveBannerCommand;

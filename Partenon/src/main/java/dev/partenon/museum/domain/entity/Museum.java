@@ -2,13 +2,12 @@ package dev.partenon.museum.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.partenon.expositions.domain.Expositions;
 import dev.partenon.museum.domain.commands.SaveMuseumAndUserCommand;
 import dev.partenon.user.domain.User;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
@@ -31,9 +30,6 @@ public final class Museum implements Serializable {
     @Column(name = "museum_name", nullable = false, length = 30)
     private String museumName;
 
-    @Column(name = "country", nullable = false, length = 30)
-    private String country;
-
     @Column(name = "province", nullable = false, length = 30)
     private String province;
 
@@ -51,18 +47,20 @@ public final class Museum implements Serializable {
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     private OpeningHours openingHours;
 
-    @JsonIgnore
     @JsonBackReference
     @OneToMany(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     private List<MuseumContact> museumContactList;
-    @JsonIgnore
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "museumOwnerExposition", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
+    private List<Expositions> expositions;
+
     @OneToOne(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     private MuseumPlan museumPlan;
-    @JsonIgnore
+
     @OneToOne(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     private MuseumBanner museumBanner;
 
@@ -72,7 +70,6 @@ public final class Museum implements Serializable {
     public static Museum create(SaveMuseumAndUserCommand command, PasswordEncoder passwordEncoder){
         var museum = new Museum();
         museum.setMuseumName(command.getMuseumName());
-        museum.setCountry(command.getCountry());
         museum.setProvince(command.getProvince());
         museum.setCity(command.getCity());
         museum.setStreet(command.getStreet());
@@ -93,7 +90,6 @@ public final class Museum implements Serializable {
         return "Museum{" +
                 "museumId=" + museumId +
                 ", museumName='" + museumName + '\'' +
-                ", country='" + country + '\'' +
                 ", province='" + province + '\'' +
                 ", city='" + city + '\'' +
                 ", street='" + street + '\'' +

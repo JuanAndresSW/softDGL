@@ -35,20 +35,20 @@ public class PagingMuseumsQueryHandler implements QueryHandler<PagedResponse<Mus
         validatePageNumberAndSize(query.getPage().getIndex(), query.getPage().getSize(), query.getPage().getOrder());
 
         Pageable pageable = createPageable(query.getPage());
-        var pages = repository.findAll(pageable);
-        log.info("Entro al museo");
-        List<Museum> content = pages.getNumberOfElements() == 0 ? Collections.emptyList() : pages.getContent();
 
-        content.forEach(x -> {
-            x.setOpeningHours(null);
-            x.setMuseumPlan(null);
-            x.setMuseumContactList(null);
-            x.setCountry(null);
-            x.setProvince(null);
-            x.setCity(null);
-            x.setStreet(null);
-            x.setAddressNumber(null);
-        });
+        var pages = repository.findAll(pageable);
+        var content = new LinkedList<MuseumProjection>();
+        if(pages.getNumberOfElements() != 0){
+            pages.getContent().forEach(x ->{
+                var projection =new MuseumProjection(x.getMuseumId(), x.getMuseumName());
+                projection.setBanner(x.getMuseumBanner() != null
+                        ? x.getMuseumBanner().getBanner() : null);
+                projection.setDescription(x.getMuseumDescription() != null
+                        ? x.getMuseumDescription().getDescription() : null);
+                content.addLast(projection);
+            });
+        }
+        //List<Museum> content = pages.getNumberOfElements() == 0 ? Collections.emptyList() : pages.getContent();
 
         return new PagedResponse(content, pages.getNumber(), pages.getSize(),
                 pages.getTotalElements(), pages.getTotalPages(), pages.isLast());

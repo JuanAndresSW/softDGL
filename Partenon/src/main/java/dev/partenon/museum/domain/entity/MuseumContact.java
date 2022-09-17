@@ -1,5 +1,6 @@
 package dev.partenon.museum.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.museum.domain.SocialMediaType;
 import dev.partenon.museum.domain.commands.SaveContactCommand;
 import lombok.*;
@@ -29,6 +30,7 @@ public class MuseumContact implements Serializable {
     @Column(name = "museum_contact", nullable = false)
     private String museumContact;
 
+    @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false)
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private Museum museum;

@@ -1,5 +1,6 @@
 package dev.partenon.museum.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.museum.domain.commands.SaveBuildingPlanCommand;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,12 +21,13 @@ import java.util.UUID;
 public class MuseumPlan implements Serializable {
     public static final Long serialVersionUID = 1L;
 
+    @JsonIgnore
     @Id
     @Column(name = "museum_plan_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long museumPlanId;
 
-
+    @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false)
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private Museum museum;

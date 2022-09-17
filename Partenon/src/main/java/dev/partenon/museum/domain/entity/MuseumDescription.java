@@ -1,9 +1,8 @@
 package dev.partenon.museum.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.museum.domain.commands.SaveDescriptionCommand;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,16 +10,20 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public final class MuseumDescription {
+
+    @JsonIgnore
     @Id
     @Column(name = "museum_description_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long museumDescriptionId;
 
-    @Column(name = "description", nullable = false, length = 200)
+    @Column(name = "description", nullable = false, length = 300)
     private String description;
 
+    @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false, unique = true)
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private Museum museum;

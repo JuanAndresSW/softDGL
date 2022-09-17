@@ -40,8 +40,7 @@ public class AuthorizationFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         if (isNotRequiredAuthorization(request)) {
             filterChain.doFilter(request, response);
-        }
-        if (isRequiredAuthorization(request)) {
+        } else {
             String authHeader = request.getHeader(AUTHORIZATION);
             var token = jwtProvider.validateRequest(authHeader);
             try {
@@ -75,13 +74,9 @@ public class AuthorizationFilter extends OncePerRequestFilter {
     private boolean isNotRequiredAuthorization(HttpServletRequest request) {
         return  request.getServletPath().equals("/login") ||
                 request.getServletPath().equals("/api/auth/login") ||
+                request.getServletPath().equals("/api/museums/all") ||
+                request.getServletPath().equals("/api/museums") ||
                 request.getServletPath().equals("/api/auth/museums");
-    }
-
-    private boolean isRequiredAuthorization(HttpServletRequest request) {
-        return  !request.getServletPath().equals("/login") &&
-                !request.getServletPath().equals("/api/auth/login") &&
-                !request.getServletPath().equals("/api/auth/museums");
     }
 
 }

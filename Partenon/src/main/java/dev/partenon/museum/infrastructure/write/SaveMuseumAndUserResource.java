@@ -1,4 +1,4 @@
-package dev.partenon.museum.infrastructure;
+package dev.partenon.museum.infrastructure.write;
 
 import dev.partenon.global.domain.abstractcomponents.command.CommandBus;
 import dev.partenon.museum.domain.commands.SaveMuseumAndUserCommand;
@@ -29,7 +29,6 @@ public class SaveMuseumAndUserResource {
                 .password(userRestModel.getPassword())
                 .email(userRestModel.getEmail())
                 .museumName(userRestModel.getMuseumName())
-                .country(userRestModel.getCountry())
                 .province(userRestModel.getProvince())
                 .city(userRestModel.getCity())
                 .street(userRestModel.getStreet())

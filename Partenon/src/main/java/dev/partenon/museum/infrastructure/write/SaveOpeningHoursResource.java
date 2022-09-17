@@ -1,4 +1,4 @@
-package dev.partenon.museum.infrastructure;
+package dev.partenon.museum.infrastructure.write;
 
 import dev.partenon.global.domain.abstractcomponents.command.CommandBus;
 import dev.partenon.museum.domain.commands.SaveOpeningHoursCommand;
@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping("api/museums")
+@RequestMapping("/api/museums")
 public class SaveOpeningHoursResource {
     private final CommandBus commandBus;
 
