@@ -1,12 +1,19 @@
 import React, { ReactNode } from "react";
 import './Section.css';
 
-type props = {children: ReactNode}
+type props = {
+    children: ReactNode;
+    label?: string;
+}
 
-export default function Section({children}:props): JSX.Element {
-    return <div className="section">
-        <div style={{maxWidth: "900px", margin:"0 auto"}}>
-        {children}
+/**
+ * Un envoltorio visible con título opcional 'label'.
+ */
+export default function Section({children, label}:props): JSX.Element {
+    return (
+        <div className="section">
+            <legend>{label}</legend>
+            {children}
         </div>
-    </div>
+    );
 }

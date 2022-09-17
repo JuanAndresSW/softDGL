@@ -1,0 +1,43 @@
+.exposition {
+    max-width: 800px;
+    width: max-content;
+    margin: 1rem auto;
+    padding: 0 1rem .2rem;
+    color: #333;
+    font-size: 1rem;
+    font-family: monospace;
+    
+
+    [data-expo-header] {
+        border: 0px solid #444;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: .4rem;
+        svg {
+            color: #aaa;
+            margin: 0 1rem;
+            font-size: 2rem;
+        }
+        h2, h3 {margin: 0;}
+        h2 {
+            font-size: 1.3rem;
+        }
+        h3 {
+            font-size: 1rem;
+            background-color: #3cf13c;
+            padding: .2rem;
+            border-radius: 5px;
+        }
+    }
+
+    [data-expo-body] {
+        width: 98%;
+        margin: 0 auto;
+        padding: .4rem 1rem;
+        img {
+            width: 250px;
+            border-radius: 10px;
+            margin: 0 .5rem;
+        }
+    }
+}

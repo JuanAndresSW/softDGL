@@ -1,4 +1,4 @@
-export const IDTrader = parseInt(sessionStorage.getItem("IDTrader"));
+export const museumID = parseInt(sessionStorage.getItem("museumID"));
 
 /**Lista de provincias de argentina, en orden alfabético. Ciudad de Buenos Aires no incluida. */
 export const provinces = [
