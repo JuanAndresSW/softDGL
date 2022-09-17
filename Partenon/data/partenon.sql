@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `partenon_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `partenon_db`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: partenon_db
@@ -18,6 +16,35 @@ USE `partenon_db`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `expositions`
+--
+
+DROP TABLE IF EXISTS `expositions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `expositions` (
+  `exposition_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `museum_id` int unsigned NOT NULL,
+  `photo` mediumtext NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `exposition_name` varchar(30) NOT NULL,
+  `category` varchar(45) NOT NULL,
+  PRIMARY KEY (`exposition_id`),
+  KEY `museum_exposition_fk_idx` (`museum_id`),
+  CONSTRAINT `museum_exposition_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `expositions`
+--
+
+LOCK TABLES `expositions` WRITE;
+/*!40000 ALTER TABLE `expositions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `expositions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `museum`
 --
 
@@ -30,13 +57,12 @@ CREATE TABLE `museum` (
   `user_id` int unsigned NOT NULL,
   `province` varchar(45) NOT NULL,
   `city` varchar(45) NOT NULL,
-  `country` varchar(45) NOT NULL,
   `street` varchar(45) NOT NULL,
   `height` varchar(45) NOT NULL,
   PRIMARY KEY (`museum_id`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   CONSTRAINT `user_museum_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,11 +137,11 @@ DROP TABLE IF EXISTS `museum_description`;
 CREATE TABLE `museum_description` (
   `museum_description_id` int unsigned NOT NULL AUTO_INCREMENT,
   `museum_id` int unsigned NOT NULL,
-  `description` varchar(200) NOT NULL,
+  `description` varchar(300) NOT NULL,
   PRIMARY KEY (`museum_description_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_description_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +226,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,4 +247,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-16 18:15:33
+-- Dump completed on 2022-09-17 16:29:11
