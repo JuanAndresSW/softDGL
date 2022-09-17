@@ -5,6 +5,7 @@ import dev.partenon.museum.domain.commands.SaveDescriptionCommand;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "museum_description")
 @Entity
@@ -12,13 +13,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public final class MuseumDescription {
+public final class MuseumDescription implements Serializable {
+    public static final Long serialVersionUID = 1L;
 
-    @JsonIgnore
     @Id
     @Column(name = "museum_description_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long museumDescriptionId;
+    private Long descriptionId;
 
     @Column(name = "description", nullable = false, length = 300)
     private String description;
@@ -38,7 +39,7 @@ public final class MuseumDescription {
     @Override
     public String toString() {
         return "MuseumDescription{" +
-                "museumDescriptionId=" + museumDescriptionId +
+                "museumDescriptionId=" + descriptionId +
                 ", museumDescription='" + description + '\'' +
                 '}';
     }

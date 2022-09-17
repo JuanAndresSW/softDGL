@@ -5,9 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.expositions.domain.Expositions;
 import dev.partenon.museum.domain.commands.SaveMuseumAndUserCommand;
 import dev.partenon.user.domain.User;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
@@ -18,7 +16,8 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public final class Museum implements Serializable {
     public static final Long serialVersionUID = 1L;
 
@@ -52,7 +51,7 @@ public final class Museum implements Serializable {
 
     @JsonBackReference
     @OneToMany(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
-    private List<MuseumContact> museumContactList;
+    private List<MuseumContact> museumContacts;
 
     @JsonBackReference
     @OneToMany(mappedBy = "museumOwnerExposition", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
@@ -96,7 +95,7 @@ public final class Museum implements Serializable {
                 ", addressNumber='" + addressNumber + '\'' +
                 ", user=" + user +
                 ", openingHours=" + openingHours +
-                ", museumContactList=" + museumContactList +
+                ", museumContactList=" + museumContacts +
                 ", museumPlan=" + museumPlan +
                 ", museumBanner=" + museumBanner +
                 ", museumDescription=" + museumDescription +

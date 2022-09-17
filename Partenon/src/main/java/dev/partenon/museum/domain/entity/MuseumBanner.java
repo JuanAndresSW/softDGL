@@ -2,12 +2,9 @@ package dev.partenon.museum.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.UUID;
 
 @Table(name = "museum_banner")
 @Entity
@@ -18,11 +15,10 @@ import java.util.UUID;
 public class MuseumBanner implements Serializable {
     public static final Long serialVersionUID = 1L;
 
-    @JsonIgnore
     @Id
     @Column(name = "museum_banner_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long museumBannerId;
+    private Long bannerId;
 
     @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false)
@@ -45,7 +41,7 @@ public class MuseumBanner implements Serializable {
     @Override
     public String toString() {
         return "MuseumBanner{" +
-                "museumBannerId=" + museumBannerId +
+                "museumBannerId=" + bannerId +
                 ", banner='" + banner + '\'' +
                 '}';
     }

@@ -1,9 +1,8 @@
 package dev.partenon.expositions.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.museum.domain.entity.Museum;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,7 +10,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class Expositions {
     @Id
     @Column(name = "exposition_id")
@@ -28,6 +28,7 @@ public class Expositions {
     @Column(name = "category", nullable = false)
     private String category;
 
+    @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false)
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private Museum museumOwnerExposition;
@@ -42,5 +43,14 @@ public class Expositions {
         return exposition;
     }
 
-
+    @Override
+    public String toString() {
+        return "Expositions{" +
+                "expositionId=" + expositionId +
+                ", expositionName='" + expositionName + '\'' +
+                ", description='" + description + '\'' +
+                ", photo='" + photo + '\'' +
+                ", category='" + category + '\'' +
+                '}';
+    }
 }

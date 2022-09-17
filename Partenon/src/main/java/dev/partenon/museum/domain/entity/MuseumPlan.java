@@ -3,15 +3,11 @@ package dev.partenon.museum.domain.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.museum.domain.commands.SaveBuildingPlanCommand;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.UUID;
 
 @Table(name = "museum_plan")
 @Entity
@@ -21,11 +17,10 @@ import java.util.UUID;
 public class MuseumPlan implements Serializable {
     public static final Long serialVersionUID = 1L;
 
-    @JsonIgnore
     @Id
     @Column(name = "museum_plan_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long museumPlanId;
+    private Long planId;
 
     @JsonIgnore
     @JoinColumn(name = "museum_id", nullable = false)
@@ -46,7 +41,7 @@ public class MuseumPlan implements Serializable {
     @Override
     public String toString() {
         return "MuseumPlan{" +
-                "museumPlanId=" + museumPlanId +
+                "museumPlanId=" + planId +
                 ", buildingPlan='" + buildingPlan + '\'' +
                 '}';
     }
