@@ -1,16 +1,6 @@
 .section {
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 74%, rgba(238,238,238,1) 100%); 
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    background: #ffffff;
     padding: 1rem;
     margin: 0;
-}
-
-.section legend:nth-child(1) {
-    margin: .4rem;
-    text-align: center;
-    color: #222;
-    font-size: 1rem;
-    font-family: monospace;
+    min-height: 60vh;
 }

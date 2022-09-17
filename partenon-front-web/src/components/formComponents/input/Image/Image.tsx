@@ -1,14 +1,14 @@
 import React from "react";  
 import './Image.css';
-import defaultAvatar from 'assets/svg/user.svg';
+import defaultLogo from 'assets/svg/logo.svg';
 import { BsFillXCircleFill } from "react-icons/bs";
 
 type props = {
-    label: string;
+    label?: string;
     note?: string;
     fallback?: string;
     setter: React.Dispatch<React.SetStateAction<File>>;
-    img: File;
+    img: File|Blob;
 }
 
 /**
@@ -19,7 +19,7 @@ type props = {
  * @param props.setter    - Función controladora del estado de la constante que almacena la imágen.
  * @param props.img       - Valor File de la imágen a mostrar.
  */
-export default function Image({label, note, fallback=defaultAvatar, setter, img}:props) {
+export default function Image({label, note, fallback=defaultLogo, setter, img}:props) {
 
   return (
     <label className="image">
@@ -39,7 +39,7 @@ export default function Image({label, note, fallback=defaultAvatar, setter, img}
           }}
         />
         <div>
-        <img src={img?.size>10? URL.createObjectURL(img):fallback} />
+        <img src={img?.size>10? URL.createObjectURL(img):'https://www.pngitem.com/pimgs/m/6-67022_dslr-camera-vector-icon-camera-vector-icon-png.png'} />
         </div>
 
     </label>

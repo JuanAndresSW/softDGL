@@ -1,9 +1,10 @@
 import React from "react";
 import './Button.css';
 type props = {
-    children: React.ReactNode;
-    type?: ("button"|"submit"|"delete");
-    onClick?: Function;
+    children: React.ReactNode,
+    type?: ("button"|"submit"|"delete"),
+    onClick?: Function,
+    style?: React.CSSProperties
 };
 
 /**
@@ -12,9 +13,11 @@ type props = {
  * @param props.type - El tipo de botón.
  * @param props.onClick - La función de evento de clic.
  */
-export default function Button({children, type="button", onClick=()=>{return}}:props): JSX.Element {
+export default function Button({children, type="button", onClick=()=>{return}, style}:props): JSX.Element {
     return (
-        <button type={type==="submit"?"submit":"button"} 
+        <button 
+        style={style}
+        type={type==="submit"?"submit":"button"} 
         className={type==="delete"?"button delete":"button"}
         onClick={()=>onClick()}>
             {children}

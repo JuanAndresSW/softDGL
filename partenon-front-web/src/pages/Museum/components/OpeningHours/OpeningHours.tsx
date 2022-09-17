@@ -1,27 +1,37 @@
 import React, { useState } from "react";
 import { FlexDiv } from "components/wrappers";
 import { Button, Field, Message, Select } from "components/formComponents";
+import { BiPlus } from "react-icons/bi";
 
 import "./OpeningHours.css";
 
 type props = {
-    contact: {
-        type: string,
-        value: string
-    }[]
+    openingHours: {
+        monday: string,
+        tuesday: string,
+        wednesday: string,
+        thursday: string,
+        friday: string,
+        saturday: string,
+        sunday: string
+    },
+    editing: boolean
 }
 
 
-export default function OpeningHours({contact}: props) {
+export default function OpeningHours({openingHours, editing}: props) {
 
     const [monday, setMonday] = useState();
 
-    const [addingHours, setAddingHours] = useState(false);
+    function sendHours() {
+        
+    }
 
     return (
-        <div className="contact-info">
-           {addingHours?
-            <form>
+        <div>
+           {editing?
+
+            <FlexDiv align="flex-end">
                 <HourEditor day="Lunes"     bind={[monday, setMonday]} />
                 <HourEditor day="Martes"    bind={[monday, setMonday]} />
                 <HourEditor day="Miércoles" bind={[monday, setMonday]} />
@@ -29,39 +39,33 @@ export default function OpeningHours({contact}: props) {
                 <HourEditor day="Viernes"   bind={[monday, setMonday]} />
                 <HourEditor day="Sábado"    bind={[monday, setMonday]} />
                 <HourEditor day="Domingo"   bind={[monday, setMonday]} />
-            </form>
+                <Button onClick={()=>sendHours()}>+ agregar horarios</Button>
+            </FlexDiv>
+
             :
 
-            !placeholderMuseum.openingHours.monday? null:
-            <div>
-                <Hours day="Lunes"      hours={placeholderMuseum.openingHours.monday}/>
-                <Hours day="Martes"     hours={placeholderMuseum.openingHours.tuesday}/>
-                <Hours day="Miércoles"  hours={placeholderMuseum.openingHours.wednesday}/>
-                <Hours day="Jueves"     hours={placeholderMuseum.openingHours.thursday}/>
-                <Hours day="Viernes"    hours={placeholderMuseum.openingHours.friday}/>
-                <Hours day="Sábado"     hours={placeholderMuseum.openingHours.saturday}/>
-                <Hours day="Domingo"    hours={placeholderMuseum.openingHours.sunday}/>
-            </div>}
-
-            {
-                placeholderMuseum.openingHours.monday?null: <BiPlus onClick={()=>setAddingHours(true)}/>
-            }
+            <FlexDiv>
+                <Hours day="Lunes"      hours={openingHours.monday}/>
+                <Hours day="Martes"     hours={openingHours.tuesday}/>
+                <Hours day="Miércoles"  hours={openingHours.wednesday}/>
+                <Hours day="Jueves"     hours={openingHours.thursday}/>
+                <Hours day="Viernes"    hours={openingHours.friday}/>
+                <Hours day="Sábado"     hours={openingHours.saturday}/>
+                <Hours day="Domingo"    hours={openingHours.sunday}/>
+            </FlexDiv>} 
         </div>
 
     )
 }
 
-
 function Hours({day, hours}: {day: string, hours: string}): JSX.Element {
-    return <FlexDiv justify="space-between">
-        <p style={{background: 'green', margin:'.2rem'}}>{day}</p>
-        <p style={{margin: '0 1rem'}}>{hours}</p>
-    </FlexDiv>
+    return <div className="opening-hours">
+        <p>{day}</p>
+        <p>{hours?hours:'-'}</p>
+    </div>
 }
 
 function HourEditor({day, bind}: {day: string, bind: [any, any]}): JSX.Element {
-    return <FlexDiv justify="space-around">
-        <p style={{background: 'green', margin:'.2rem'}}>{day}</p>
-        <Field bind={[bind[0], bind[1]]} />
-    </FlexDiv>
+    return <Field label={day} bind={[bind[0], bind[1]]} />
+ 
 }

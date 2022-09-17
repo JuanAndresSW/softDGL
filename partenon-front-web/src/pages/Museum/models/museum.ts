@@ -1,12 +1,14 @@
 type museum = {
-    museumName: string,
-    province: string,
-    city: string,
-    street: string,
-    addressNumber: string,
-    description: string,
-    banner: File,
-    plan: File,
+    basicData: {
+        name: string,
+        province: string,
+        city: string,
+        street: string,
+        addressNumber: string,
+        description: string,
+        banner: Blob,
+    },
+    plan: Blob,
 
     contact: {
         type: string,
@@ -19,13 +21,14 @@ type museum = {
         wednesday: string,
         thursday: string,
         friday: string,
+        saturday: string,
         sunday: string,
     },
 
     expositions: {
         name: string,
         category: string,
-        photo: File,
+        photo: Blob,
         description: string
     }[]
 

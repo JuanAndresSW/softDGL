@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FlexDiv } from "components/wrappers";
 import { AiFillFacebook, AiFillInstagram, AiOutlineTwitter, AiOutlineWhatsApp } from "react-icons/ai";
-import { Button, Field, Message, Select } from "components/formComponents";
-import { BiPencil, BiX } from "react-icons/bi";
+import { Button, Dropdown, Field, Message, Select } from "components/formComponents";
+
 
 import "./ContactInfo.css";
 
@@ -18,16 +18,16 @@ type props = {
     contact: {
         type: string,
         value: string
-    }[]
+    }[],
+    editing: boolean
 }
 
 
-export default function ContactInfo({contact}: props) {
+export default function ContactInfo({contact, editing}: props) {
 
     //Contact.
     const [newContactType, setNewContactType] =     useState();
     const [newContactValue, setNewContactValue] =   useState();
-    const [addingContact, setAddingContact] =       useState(false);
     const [contactError, setContactError] =         useState('');
 
     const notYetAddedContacts = () =>{
@@ -60,22 +60,15 @@ export default function ContactInfo({contact}: props) {
                 </div>
             ))}
 
-            
-            <div style={{position:"absolute", top:8, right:8}}>
-                {addingContact?
-                <BiX onClick={()=>setAddingContact(false)} />:
-                <BiPencil onClick={()=>{if(contact.length<4) setAddingContact(true)}} />}
-            </div>
 
-
-            {!addingContact?null:
+            {!editing?null:
             
             <form onSubmit={(e)=>addContact(e)}>
                 <FlexDiv align="center">
-                    <Select options={notYetAddedContacts()} value={newContactType} onChange={setNewContactType}/>
+                    <Dropdown options={notYetAddedContacts()} value={newContactType} onChange={setNewContactType}/>
                     <Field bind={[newContactValue, setNewContactValue]} />
+                    <Button type="submit">Agregar</Button>
                 </FlexDiv>
-                <FlexDiv><Button type="submit">Agregar</Button></FlexDiv>
             </form>}
               
         </div>

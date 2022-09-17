@@ -2,7 +2,7 @@ import React from "react";
 import './Dropdown.css';
 
 type props = {
-    options: {name:string, value:string}[],
+    options: {name?:string, value:string}[],
     value: string,
     onChange: Function
 }
@@ -25,9 +25,9 @@ export default function Dropdown({options, value, onChange}: props): JSX.Element
                 options.map((option, index) => 
                     <option 
                     key={index} 
-                    title={option.name}
+                    title={option.value}
                     value={option.value}>
-                        {option.name}
+                        {option.value}
                     </option>
                 )
             }

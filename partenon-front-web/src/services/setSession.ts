@@ -5,15 +5,11 @@ import session from 'models/session';
 export default function setSession(json:string): void {
     const session: session = jsonToSession(json);
 
-    if (session.accessToken  !== undefined)
+
     document.cookie = `accessToken=${session.accessToken}; max-age=1209600; path=/; Secure`;
 
-    if (session.refreshToken !== undefined)
     document.cookie = `refreshToken=${session.refreshToken}; max-age=1209600; path=/; Secure`;
 
-    if (session.username     !== undefined)
-    sessionStorage.setItem("username", session.username);
+    sessionStorage.setItem("museumID", session.museumID);
     
-    if (session.IDTrader     !== undefined)                
-    sessionStorage.setItem("IDTrader", session.IDTrader);
 }
