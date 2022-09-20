@@ -76,6 +76,7 @@ public class AuthorizationFilter extends OncePerRequestFilter {
                 request.getServletPath().equals("/api/auth/login") ||
                 request.getServletPath().equals("/api/museums/all") ||
                 request.getServletPath().equals("/api/museums") ||
+                request.getServletPath().equals("/api/expositions/by") ||
                 request.getServletPath().equals("/api/auth/museums");
     }
 

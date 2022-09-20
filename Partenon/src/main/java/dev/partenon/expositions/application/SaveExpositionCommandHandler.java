@@ -4,7 +4,7 @@ package dev.partenon.expositions.application;
 import dev.partenon.expositions.domain.Expositions;
 import dev.partenon.expositions.domain.SaveExpositionCommand;
 import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
-import dev.partenon.museum.application.repository.MuseumRepository;
+import dev.partenon.museumcontext.core.application.MuseumRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

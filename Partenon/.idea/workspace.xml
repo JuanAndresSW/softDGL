@@ -5,13 +5,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a64d2c2-aca5-44c8-b526-b5a029e70430" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/openinghours/infrastructure/UpdateOpeningHoursResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_8_0_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partenon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/partenon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/application/ExpositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/application/ExpositionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/application/SaveExpositionCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/application/SaveExpositionCommandHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/domain/Expositions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/domain/Expositions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/Museum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/Museum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumBanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumBanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumDescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/OpeningHours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/OpeningHours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/infrastructure/ListExpositionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/infrastructure/ListExpositionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/global/infrastructure/security/AuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/global/infrastructure/security/AuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/global/infrastructure/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/global/infrastructure/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/GetMuseumQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/application/handlers/GetMuseumQueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/PagingMuseumsQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/application/handlers/PagingMuseumsQueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/SaveBannerCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/banner/application/SaveBannerCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/SaveBuildingPlanCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/plan/application/SaveBuildingPlanCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/SaveContactCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/contact/application/SaveContactCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/SaveDescriptionCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/description/application/SaveDescriptionCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/SaveMuseumAndUserCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/application/handlers/SaveMuseumAndUserCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/handlers/SaveOpeningHoursCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/openinghours/application/SaveOpeningHoursCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/repository/BannerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/banner/application/BannerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/repository/ContactRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/contact/application/ContactRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/repository/DescriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/description/application/DescriptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/repository/MuseumRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/application/MuseumRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/repository/OpeningHoursRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/openinghours/application/OpeningHoursRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/application/repository/PlanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/plan/application/PlanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/GetMuseumQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/doamin/GetMuseumQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/PagingMuseumsQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/doamin/PagingMuseumsQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/SocialMediaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/contact/doamin/SocialMediaType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/commands/SaveBannerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/banner/doamin/SaveBannerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/commands/SaveBuildingPlanCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/plan/doamin/SaveBuildingPlanCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/commands/SaveContactCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/contact/doamin/SaveContactCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/commands/SaveDescriptionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/description/doamin/SaveDescriptionCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/commands/SaveMuseumAndUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/doamin/SaveMuseumAndUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/commands/SaveOpeningHoursCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/openinghours/doamin/SaveOpeningHoursCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/Museum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/doamin/Museum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumBanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/banner/doamin/MuseumBanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/contact/doamin/MuseumContact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/description/doamin/MuseumDescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/plan/doamin/MuseumPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/OpeningHours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/openinghours/doamin/OpeningHours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/model/BannerRestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/banner/doamin/BannerRestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/model/BuildingPlanRestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/plan/doamin/BuildingPlanRestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/model/ContactRestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/contact/doamin/ContactRestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/model/DescriptionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/description/doamin/DescriptionModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/model/MuseumProjection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/doamin/models/MuseumProjection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/model/OpeningHoursRestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/openinghours/doamin/OpeningHoursRestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/read/GetMuseumResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/infrastructure/GetMuseumResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/read/PagingMuseumsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/infrastructure/PagingMuseumsResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/write/SaveBannerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/banner/infrastructure/SaveBannerResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/write/SaveBuildingPlanResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/plan/infrastructure/SaveBuildingPlanResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/write/SaveContactResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/contact/infrastructure/SaveContactResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/write/SaveDescriptionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/description/infrastructure/SaveDescriptionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/write/SaveMuseumAndUserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/core/infrastructure/SaveMuseumAndUserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/infrastructure/write/SaveOpeningHoursResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museumcontext/openinghours/infrastructure/SaveOpeningHoursResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/user/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/application/ExpositionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/application/ExpositionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/domain/Expositions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/domain/Expositions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/infrastructure/ListExpositionResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/infrastructure/ListExpositionResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/global/infrastructure/security/AuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/global/infrastructure/security/AuthorizationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/global/infrastructure/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/global/infrastructure/security/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/application/handlers/PagingMuseumsQueryHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/application/handlers/PagingMuseumsQueryHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/application/repository/OpeningHoursRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/application/repository/OpeningHoursRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/application/repository/PlanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/application/repository/PlanRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/PagingMuseumsQuery$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/PagingMuseumsQuery$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/PagingMuseumsQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/PagingMuseumsQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/Museum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/Museum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumBanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumBanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumDescription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumDescription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumPlan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/OpeningHours.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/OpeningHours.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/infrastructure/read/PagingMuseumsResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/infrastructure/read/PagingMuseumsResource.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,23 +141,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/EPETN4/Desktop/Iniciador/partenon/Partenon/pom.xml",
+    "last_opened_file_path": "C:/Users/EPETN4/Desktop/Fallo/PROYECTOS/facturador-demo/pom.xml",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\EPETN4\Desktop\PROYECTOS\Partenon not-micro\src\main\java\dev\partenon\global\domain\model" />
-      <recent name="C:\Users\EPETN4\Desktop\PROYECTOS\Partenon not-micro\src\main\java\dev\partenon\museum\domain\entity" />
-      <recent name="C:\Users\EPETN4\Desktop\PROYECTOS\Partenon not-micro\src\main\java\dev\partenon\global\infrastructure" />
-      <recent name="C:\Users\EPETN4\Desktop\PROYECTOS\Partenon not-micro\src\main\java\dev\partenon\global\infrastructure\security" />
+      <recent name="C:\Users\EPETN4\Desktop\Iniciador\partenon\Partenon\src\main\java\dev\partenon\museum\museum" />
+      <recent name="C:\Users\EPETN4\Desktop\Iniciador\partenon\Partenon\src\main\java\dev\partenon\museum\score" />
+      <recent name="C:\Users\EPETN4\Desktop\Iniciador\partenon\Partenon\src\main\java\dev\partenon\museum\openinghours" />
+      <recent name="C:\Users\EPETN4\Desktop\Iniciador\partenon\Partenon\src\main\java\dev\partenon\museum\plan" />
+      <recent name="C:\Users\EPETN4\Desktop\Iniciador\partenon\Partenon\src\main\java\dev\partenon\museum\description" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dev.partenon.museum.domain.commands" />
       <recent name="dev.partenon.museum.domain.model" />
       <recent name="dev.partenon.user.application.handlers" />
       <recent name="dev.partenon.user.domain" />
       <recent name="dev.partenon.user.infrastructure" />
-      <recent name="dev.partenon.global.infrastructure.resource" />
     </key>
   </component>
   <component name="RunManager" selected="Application.dev.partenon.PartenonApplication">
