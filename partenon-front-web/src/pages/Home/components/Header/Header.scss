@@ -2,9 +2,8 @@ header {
 	width: 100vw;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    border-bottom: 1px solid gainsboro;
     #logo{
         display: flex;
         align-items: center;
@@ -17,9 +16,6 @@ header {
             height: 3rem;
         }
     }
-    #logged-header {
-        display: flex;
-    }
 
     #header-links{
         font-family: 'nunito', monospace;
@@ -30,7 +26,7 @@ header {
         a {
             text-decoration: none;
             margin: 1rem;
-            color: blue;
+            color: white;
         }
         button {
             float: right;
@@ -46,13 +42,4 @@ header {
             }
         }
     }
-}
-@media (max-width: 750px) {
-    #logged-header {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-@media (max-width: 600px) {
-    #logo * {display: none;}
 }

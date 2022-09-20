@@ -1,3 +1,5 @@
+import openingHours from './openingHours';
+
 type museum = {
     basicData: {
         name: string,
@@ -15,15 +17,7 @@ type museum = {
         value: string
     }[],
 
-    openingHours: {
-        monday: string,
-        tuesday: string,
-        wednesday: string,
-        thursday: string,
-        friday: string,
-        saturday: string,
-        sunday: string,
-    },
+    openingHours: openingHours,
 
     expositions: {
         name: string,

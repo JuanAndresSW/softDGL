@@ -21,7 +21,7 @@ export default function Expositions({expositions, editing}: props) {
     const [description, setDescription] = useState();
 
     return <div className="expositions">
-        {expositions.map((exposition)=><Exposition exposition={exposition}/>)}
+        {expositions.map((exposition)=><Exposition key={exposition.name} exposition={exposition}/>)}
 
 
         {!editing?null:
@@ -36,7 +36,7 @@ export default function Expositions({expositions, editing}: props) {
 
             <div>
             <Textarea label="descripción" maxLength={100} bind={[description, setDescription]}/>
-            <Button>Nuevo</Button>
+            <Button>+ nueva exposición</Button>
             </div>
             
         </FlexDiv>}

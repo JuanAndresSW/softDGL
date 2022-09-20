@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 //Servicios.
 import tryLogin from "./services/tryLogin";
@@ -11,9 +11,12 @@ import Valid from "utilities/Valid";
 import {Form, Field, Message, Button} from 'components/formComponents';
 import { FlexDiv } from "components/wrappers";
 import { Loading } from "components/standalone";
+import { museumID } from "utilities/constants";
 
 /**Un formulario para iniciar sesión.*/
 export default function Login(): JSX.Element {
+
+  const navigate = useNavigate();
 
   const [usernameOrEmail, setUser] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +32,7 @@ export default function Login(): JSX.Element {
       setLoading(false);
       if (!response.ok) return setError(error);
       setError("");
-      window.location.reload();
+      navigate("?museum="+museumID);
     })
   };
 

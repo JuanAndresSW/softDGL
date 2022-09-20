@@ -1,12 +1,18 @@
+import { Field } from "components/formComponents";
 import { Section } from "components/wrappers";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./TitleScreen.css";
 
-/**Título de la aplicación con inputs de credenciales para iniciar sesión. */
 export default function TitleScreen(): JSX.Element {
 
+  const [museums, setMuseums] = useState(undefined);
+  const [page, setPage] = useState(0);
+  const [q, setQ] = useState('');
 
-  function search(e?: React.FormEvent<HTMLFormElement>) {
+
+  useEffect(search, [page]);
+
+  function search() {
 
   }
 
@@ -16,10 +22,14 @@ export default function TitleScreen(): JSX.Element {
       <h2>Crea y visita museos, solicita turnos y diviértete.</h2>
 
       <Section label="">
-        <form onSubmit={(e)=>search(e)}>
-          <input type="search" placeholder="encuentra un museo..." />
+        <form onSubmit={(e)=>{e.preventDefault();search()}}>
+          <Field type="search" placeholder="encuentra un museo..." bind={[q, setQ]} />
           <b style={{padding: '0 1rem', cursor: 'pointer'}} title="buscar" onClick={()=>search()} >🧐</b>
         </form>
+
+        
+        
+
       </Section>
     </div>
   );

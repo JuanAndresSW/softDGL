@@ -20,7 +20,7 @@
 .exposition [data-expo-header] svg {
   color: #aaa;
   margin: 0 1rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 .exposition [data-expo-header] h2, .exposition [data-expo-header] h3 {
@@ -35,6 +35,9 @@
   font-size: 1rem;
   background-color: #3cf13c;
   padding: .2rem;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   border-radius: 5px;
 }
 

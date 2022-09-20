@@ -8,12 +8,14 @@ import OpeningHours from "./components/OpeningHours/OpeningHours";
 import Expositions from "./components/Expositions/Expositions";
 import Plan from "./components/Plan/Plan";
 
-import { Section, Retractable } from "components/wrappers";
+import { Section, Retractable, FlexDiv } from "components/wrappers";
 import { Button } from "components/formComponents";
 
 import getMuseum from "./services/getMuseum";
 import museum from "./models/museum";
 import { BiPencil, BiX } from "react-icons/bi";
+import { museumID } from "utilities/constants";
+import { BackArrow } from "components/standalone";
 
 
 
@@ -55,18 +57,19 @@ const placeholderMuseum: museum = {
         category: "categ",
         photo: new Blob(),
         description: "description"
-    },]
+    }]
 }
 
 
+export default function Museum({hasEditingPermissions=false}: {hasEditingPermissions?: boolean}): JSX.Element {
 
-/**Application's global component.*/
-export default function Museum(): JSX.Element {
+    const museumIDAsVisitor = parseInt(useParams().id);
 
-    const {IDUser} = useParams();
-    useEffect(requestMuseum, [IDUser]);
+    const id = hasEditingPermissions ? museumID : museumIDAsVisitor; 
+    useEffect(requestMuseum, [id]);
+
     function requestMuseum() {
-        getMuseum(parseInt(IDUser)).then(response=>{
+        getMuseum(id).then(response=>{
             if (response.ok) setMuseum(response.content);
         });
     }
@@ -78,39 +81,27 @@ export default function Museum(): JSX.Element {
 
     return <>
 
-
-
+        {!hasEditingPermissions?null:
         <Button type={editing?'delete':'button'} onClick={()=>setEditing(!editing)} style={{position:"absolute", top:0, right:0}}>
-            {editing?<BiX/>:<BiPencil/>}
-        </Button>
+        {editing?<BiX/>:<BiPencil/>}
+        </Button>}
+        
 
-        <MuseumBanner museumBasicData={placeholderMuseum.basicData}  editing={editing}/>
+        <BackArrow/>
+        <MuseumBanner       museumBasicData={placeholderMuseum.basicData}   editing={editing}/>
 
         <Section>
 
-            <Retractable label="Horarios">
-            <OpeningHours openingHours={placeholderMuseum.openingHours} editing={editing} />                
-            </Retractable>          
+            <FlexDiv>
+            <ContactInfo    contact={placeholderMuseum.contact}             editing={editing} />
+            <OpeningHours   openingHours={placeholderMuseum.openingHours}   editing={editing} />
+            <Plan           plan={placeholderMuseum.plan}                   editing={editing} />
+            </FlexDiv>   
 
-            <Retractable label="Exposiciones">
-            <Expositions expositions={placeholderMuseum.expositions} editing={editing} />
+            <Retractable    label="Exposiciones">
+            <Expositions    expositions={placeholderMuseum.expositions}     editing={editing} />
             </Retractable>
-
-            <Retractable label="Contactos">
-            <ContactInfo contact={placeholderMuseum.contact} editing={editing} />
-            </Retractable>
-
-            { (!placeholderMuseum.plan.size && !editing) ? null :
-            <Retractable label="Plano">
-            <Plan plan={placeholderMuseum.plan} editing={editing} />
-            </Retractable>
-            }
             
-
         </Section>
-
-    </>
-        
+    </>    
 }
-
-

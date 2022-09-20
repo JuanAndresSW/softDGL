@@ -6,7 +6,6 @@ export default function jsonToSession(json: string): session {
     return {
         accessToken:    session.accessToken,
         refreshToken:   session.refreshToken,
-        username:       session.username,
-        IDTrader:       session.IDTrader
+        museumID:       session.museumId,
     }
 }

@@ -2,7 +2,7 @@
   min-height: 14rem;
   padding: 2rem 0 0 2rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #111;
+  color: white;
 }
 
 [data-museum-banner] img {
@@ -13,6 +13,10 @@
 }
 
 [data-museum-banner] h2 {
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+[data-museum-banner] label, [data-museum-banner] select {
+  color: white;
 }
 /*# sourceMappingURL=MuseumBanner.css.map */

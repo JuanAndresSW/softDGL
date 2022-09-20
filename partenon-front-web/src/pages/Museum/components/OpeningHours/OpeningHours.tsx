@@ -1,30 +1,40 @@
 import React, { useState } from "react";
 import { FlexDiv } from "components/wrappers";
-import { Button, Field, Message, Select } from "components/formComponents";
-import { BiPlus } from "react-icons/bi";
+import { Button, Field } from "components/formComponents";
 
 import "./OpeningHours.css";
+import postOpeningHours from "../../services/postOpeningHours";
+import openingHours from "../../models/openingHours";
 
 type props = {
-    openingHours: {
-        monday: string,
-        tuesday: string,
-        wednesday: string,
-        thursday: string,
-        friday: string,
-        saturday: string,
-        sunday: string
-    },
+    openingHours: openingHours,
     editing: boolean
 }
 
 
 export default function OpeningHours({openingHours, editing}: props) {
 
-    const [monday, setMonday] = useState();
+    const [monday,      setMonday] =    useState();
+    const [tuesday,     setTuesday] =   useState();
+    const [wednesday,   setWednesday] = useState();
+    const [thursday,    setThursday] =  useState();
+    const [friday,      setFriday] =    useState();
+    const [saturday,    setSaturday] =  useState();
+    const [sunday,      setSunday] =    useState();
+
 
     function sendHours() {
-        
+        postOpeningHours({
+            monday:     monday,
+            tuesday:    tuesday,
+            wednesday:  wednesday,
+            thursday:   thursday,
+            friday:     friday,
+            saturday:   saturday,
+            sunday:     sunday
+        }).then(response=>{
+            if (response.ok) window.location.reload();
+        })
     }
 
     return (
@@ -32,13 +42,13 @@ export default function OpeningHours({openingHours, editing}: props) {
            {editing?
 
             <FlexDiv align="flex-end">
-                <HourEditor day="Lunes"     bind={[monday, setMonday]} />
-                <HourEditor day="Martes"    bind={[monday, setMonday]} />
-                <HourEditor day="Miércoles" bind={[monday, setMonday]} />
-                <HourEditor day="Jueves"    bind={[monday, setMonday]} />
-                <HourEditor day="Viernes"   bind={[monday, setMonday]} />
-                <HourEditor day="Sábado"    bind={[monday, setMonday]} />
-                <HourEditor day="Domingo"   bind={[monday, setMonday]} />
+                <HourEditor day="Lunes"     bind={[monday,      setMonday]}     />
+                <HourEditor day="Martes"    bind={[tuesday,     setTuesday]}    />
+                <HourEditor day="Miércoles" bind={[wednesday,   setWednesday]}  />
+                <HourEditor day="Jueves"    bind={[thursday,    setThursday]}   />
+                <HourEditor day="Viernes"   bind={[friday,      setFriday]}     />
+                <HourEditor day="Sábado"    bind={[saturday,    setSaturday]}   />
+                <HourEditor day="Domingo"   bind={[sunday,      setSunday]}     />
                 <Button onClick={()=>sendHours()}>+ agregar horarios</Button>
             </FlexDiv>
 

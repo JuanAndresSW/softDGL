@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { provinces } from "utilities/constants";
+import { museumID, provinces } from "utilities/constants";
 
 //Componentes de formulario.
-import { Button, Field, Form, Message, Select } from 'components/formComponents';
+import { Button, Dropdown, Field, Form, Message } from 'components/formComponents';
 import { Loading } from "components/standalone";
 import { FlexDiv } from "components/wrappers";
 import { BiHome } from "react-icons/bi";
@@ -81,7 +81,7 @@ export default function SignUp(): JSX.Element {
 
       tryLogin(username, password);
       setError("");
-      navigate("/inicio");
+      navigate("?museum="+museumID);
     })
   }
 
@@ -108,7 +108,7 @@ export default function SignUp(): JSX.Element {
       validator={Valid.names(museumName)} />
 
       <FlexDiv>
-        <Select options={provinces} value={province} onChange={setProvince} />
+        <Dropdown options={provinces} value={province} onChange={setProvince} />
       </FlexDiv>
 
       <FlexDiv>

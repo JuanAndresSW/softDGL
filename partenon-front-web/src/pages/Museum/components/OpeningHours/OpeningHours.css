@@ -1,6 +1,8 @@
 .opening-hours p {
     background: #ddd;
-    margin: 0 .2rem;
-    padding: .2rem;
+    margin: .2rem;
+    font-family: monospace  ;
+    text-align: center;
+    padding: .2rem .4rem;
     border-radius: 0px;
 }

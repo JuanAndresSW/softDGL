@@ -5,11 +5,9 @@ import session from 'models/session';
 export default function setSession(json:string): void {
     const session: session = jsonToSession(json);
 
-
-    document.cookie = `accessToken=${session.accessToken}; max-age=1209600; path=/; Secure`;
-
-    document.cookie = `refreshToken=${session.refreshToken}; max-age=1209600; path=/; Secure`;
-
+    if (session.accessToken) {
+        document.cookie = `accessToken=${session.accessToken}; max-age=1209600; path=/; Secure`;
+        document.cookie = `refreshToken=${session.refreshToken}; max-age=1209600; path=/; Secure`;
+    }
     sessionStorage.setItem("museumID", session.museumID);
-    
 }

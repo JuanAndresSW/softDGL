@@ -6,12 +6,68 @@
   <component name="ChangeListManager">
     <list default="true" id="1a64d2c2-aca5-44c8-b526-b5a029e70430" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/domain/Expositions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/expositions/domain/Expositions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/Museum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/Museum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumBanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumBanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumDescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/MuseumPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/OpeningHours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/partenon/museum/domain/entity/OpeningHours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/domain/Expositions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/expositions/domain/Expositions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/Museum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/Museum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumBanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumBanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumDescription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumDescription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/MuseumPlan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/OpeningHours.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/partenon/museum/domain/entity/OpeningHours.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/adapters/jsonToSession.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/adapters/jsonToSession.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Color/Color.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Color/Color.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/DateTime/DateTime.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/DateTime/DateTime.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Radio/Radio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Radio/Radio.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Select/Select.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Select/Select.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Switch/Switch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Switch/Switch.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Table/Table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/formComponents/input/Table/Table.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/standalone/BackArrow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/components/standalone/BackArrow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/standalone/Retractable/Retractable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/standalone/Retractable/Retractable.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/wrappers/Section/Section.css" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/components/wrappers/Section/Section.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/components/wrappers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/components/wrappers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/models/session.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/models/session.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Account/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Account/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Account/SignUp/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Account/SignUp/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/ProfileMenu/ProfileMenu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/ProfileMenu/ProfileMenu.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/ProfileMenu/ProfileMenu.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/Header/ProfileMenu/ProfileMenu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Home/components/TitleScreen/TitleScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/Museum.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/Museum.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/ContactInfo/ContactInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/ContactInfo/ContactInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Exposition/Exposition.css" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Exposition/Exposition.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Exposition/Exposition.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Exposition/Exposition.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Exposition/Exposition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Exposition/Exposition.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Expositions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Expositions/Expositions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/MuseumBanner/MuseumBanner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/OpeningHours/OpeningHours.css" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/OpeningHours/OpeningHours.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/OpeningHours/OpeningHours.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/OpeningHours/OpeningHours.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Plan/Plan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/components/Plan/Plan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/models/museum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/models/museum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/services/getMuseum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/pages/Museum/services/getMuseum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/services/setSession.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/services/setSession.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/utilities/Valid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/utilities/Valid.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../partenon-front-web/src/utilities/conversions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../partenon-front-web/src/utilities/conversions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +128,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/EPETN4/Desktop/Iniciador/partenon/Partenon/pom.xml",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\EPETN4\Desktop\PROYECTOS\Partenon not-micro\src\main\java\dev\partenon\global\domain\model" />
@@ -97,17 +149,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.dev.partenon.PartenonApplication">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FacturadorMasMasApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.facturador.FacturadorMasMasApplication" />
       <module name="facturador-demo" />
@@ -154,6 +195,17 @@
       <option name="MAIN_CLASS_NAME" value="dev.facturador.TestUpload" />
       <option name="METHOD_NAME" value="testUpload" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

@@ -12,7 +12,7 @@ export default function Plan({plan, editing}: props): JSX.Element {
     return editing?
     <FlexDiv>
         <Image setter={setNewPlan} img={plan} />
-        <Button>Guardar</Button>
+        <Button>Guardar plano</Button>
     </FlexDiv>:
     <img src={URL.createObjectURL(plan)} alt="" />
 }

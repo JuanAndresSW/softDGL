@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FlexDiv } from "components/wrappers";
 import { AiFillFacebook, AiFillInstagram, AiOutlineTwitter, AiOutlineWhatsApp } from "react-icons/ai";
-import { Button, Dropdown, Field, Message, Select } from "components/formComponents";
+import { Button, Dropdown, Field } from "components/formComponents";
+import postContact from "../../services/postContact";
 
 
 import "./ContactInfo.css";
@@ -48,7 +49,7 @@ export default function ContactInfo({contact, editing}: props) {
         e.preventDefault();
         if (!newContactValue || !newContactType) return setContactError("Complete todos los campos");
         setContactError("");
-        console.log("Enviando datos de nuevo contacto");
+        postContact({type: newContactType, value: newContactValue});
     }
 
 
@@ -67,7 +68,7 @@ export default function ContactInfo({contact, editing}: props) {
                 <FlexDiv align="center">
                     <Dropdown options={notYetAddedContacts()} value={newContactType} onChange={setNewContactType}/>
                     <Field bind={[newContactValue, setNewContactValue]} />
-                    <Button type="submit">Agregar</Button>
+                    <Button type="submit">+ agregar contacto</Button>
                 </FlexDiv>
             </form>}
               

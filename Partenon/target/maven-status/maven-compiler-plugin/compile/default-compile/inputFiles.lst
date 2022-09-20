@@ -1,201 +1,90 @@
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\exception\ErrorResponse.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\subdomain\query\ControlOfPosGetQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\commands\CommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\Flux.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\thirdparty\domain\ThirdPartyRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\infrastructure\UpdateBranchResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\infrastructure\GetPointOfSale.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\cloud\UploadFileFileService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\infrastructure\PagingBranchesResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\resource\RefreshResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\query\handlers\PointOfSaleListQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\usecase\CreateBranchUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\querys\QueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\CustomUserDetails.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\PointOfSaleRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\query\PointOfSaleListQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\infrastructure\resources\GetTraderSummary.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\User.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\domain\AccountTraderData.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\querys\Query.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\domain\Invoice.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\usecase\ListPointOfSaleUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\OperationCount.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\query\handlers\AccountSingInQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\AccountRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\domain\AccountSingInRequest.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\security\filter\CORSFilter.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\command\handlers\BranchCreateCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\domain\BranchRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\command\handlers\AccountUpdateCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\adapters\SpringCommandBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\notused\domain\thirdparty\application\command\CreateClientCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\command\BranchDeleteCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\AbstractUploadFile.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\querys\QueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\sharedpayload\Page.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\infrastructure\GetInvoiceResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\subdomain\PointsOfSaleControlRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\security\filter\CustomAuthorizationFilter.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\query\handlers\PointOfSaleGetQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\domain\SellConditions.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\notused\domain\thirdparty\domain\ThirdPartyCreate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\filters\JWTEntryPoint.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\application\UserRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\infrastructure\resources\DeleteAccountResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\security\filter\JWTEntryPoint.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\trader\application\TraderWildCardService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\UserIdUsername.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\application\command\SaveAvatarCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\adapters\CustomJWT.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\application\query\UserGetAvatarQueyHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\query\AccountSingInQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\domain\AccountUpdate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\subdomain\UserAvatarRequest.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\application\command\handlers\SenderInvoiceCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\entity\Sender.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\infrastructure\PagingPointsOfSaleResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\trader\domain\TraderRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\config\GlobalExceptionHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\usecase\DeleteBranchUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\query\GetAccountQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\exception\ApiException.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\command\PointOfSaleDeleteCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\query\PointOfSaleListQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\filters\CustomAuthorizationFilter.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\event\EventHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\command\AccountDeleteCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\VatCategory.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\subdomain\UserAvatar.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\usecase\GetBranchUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\security\CustomUserDetailsService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\application\query\GetInvoiceQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\querys\Query.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\query\PointOfSaleGetQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\trader\domain\TraderUpdate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\adapters\SpringEventBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\subdomain\usecase\UpdateControlOfPosUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\Vat.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\infrastructure\resources\SignInAccountResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\sharedpayload\PagedResponse.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\domain\subdomain\PointsOfSaleControlRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\SaveAvatarCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\command\handlers\AccountDeleteCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\adapters\SpringReactiveRequest.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\infrastructure\UploadAvatarEventHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\command\PointOfSaleCreateCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\infrastructure\CreateBranchResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\subdomain\command\ControlOfPosUpdateCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\commands\Command.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\infrastructure\CreatePointOfSaleResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\command\handlers\BranchUpdateCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\domain\SenderInvoiceCreate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\BranchRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\query\BranchGetQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\usecase\DeletePointOfSaleUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\application\query\GetInvoiceNumberQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\domain\Account.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\query\PagingBranchesQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\usecase\UpdateBranchUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\security\config\SecurityConfig.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\trader\domain\TraderRegister.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\UpdateAccountService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\FacturadorMasMasApplication.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\event\Event.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\domain\PointOfSaleSummaryProjection.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\infrastructure\GetAvatarUserResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\entity\Receiver.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\RequestState.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\infrastructure\DeletePointOfSaleResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\commands\CommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\cloud\GoogleCredentials.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\command\handlers\BranchDeleteCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\domain\subdomain\PointsOfSaleControl.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\adapters\SpringQueryBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\command\BranchUpdateCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\infrastructure\GetLogoResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\command\handlers\AccountRegisterCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\domain\InvoiceResponse.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\commands\CommandBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\exception\ApiErrorField.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\entity\Product.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\domain\BranchUpdate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\exception\ApiEspecialException.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\thirdparty\domain\ThirdPartyCreate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\DocumentType.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\domain\PointOfSaleCreate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\resource\InitResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\Address.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\domain\PointOfSale.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\UserRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\notused\domain\thirdparty\infrastructure\CreateThirdPartyResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\ChecksAccountService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\command\handlers\PointOfSaleCreateCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\commands\CommandBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\query\handlers\PagingBranchesQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\infrastructure\resources\RegisterAccountResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\OperationService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\command\AccountUpdateCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\trader\application\usecase\TraderWildCardUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\subdomain\command\ControlOfPosUpdateCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\domain\exception\ErrorInDataForUpdate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\trader\domain\Trader.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\infrastructure\GetBranchesSummary.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\infrastructure\SaveAvatarResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\application\InvoiceRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\domain\exception\IndexesAreRepeated.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\query\handlers\BranchesSummaryQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\commands\Command.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\AllVatCategory.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\UploadAvatarEvent.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\domain\AccountRegister.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\infrastructure\DeleteBranchResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\ProductRequest.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\query\handlers\GetAccountQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\usecase\CreatePointOfSaleUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\domain\PointOfSaleRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\usecase\PagingBranchesUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\domain\BranchSummaryProjection.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\UserRegister.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\usecase\BranchesSummaryUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\ReactiveRequest.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\exception\ResourceNotFound.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\domain\subdomain\PosControlData.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\infrastructure\resources\UpdateAccountResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\notused\domain\thirdparty\domain\ThirdPartyRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\filters\CORSFilter.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\springservice\CustomUserDetailsService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\config\SecurityConfig.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\thirdparty\application\command\CreateClientCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\query\BranchesSummaryQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\application\query\handlers\GetInvoiceNumberQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\application\command\CreateInvoiceCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\application\command\AccountRegisterCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\command\handlers\PointOfSaleDeleteCommandHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\ServletInitializer.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\trader\application\TraderRepository.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\event\EventBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\application\querys\QueryBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\query\handlers\BranchGetQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\infrastructure\CreateInvoiceResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\application\usecase\UserGetAvatarUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\domain\UserUpdate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\resource\GlobalExceptionHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\entity\Operation.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\shared\InternalOperationData.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\thirdparty\domain\ThirdParty.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\user\application\query\UserGetAvatarQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\application\command\BranchCreateCommand.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\operation\invoice\application\query\handlers\GetInvoiceQueryHandler.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\AbstractGoogleService.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\domain\BranchCreate.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\thirdparty\infrastructure\CreateThirdPartyResource.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\subdomain\query\ControlOfPosGetQuery.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\domain\exception\BranchBadSorting.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\domain\abstractcomponents\querys\QueryBus.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\notused\domain\thirdparty\domain\ThirdParty.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\branch\domain\Branch.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\notused\domain\TypeInvoice.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\pointofsale\application\subdomain\usecase\GetControlOfPosUseCase.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\account\infrastructure\AuthenticationFilterForLogin.java
-C:\Users\Marcos\Desktop\Programacion\Mis Proyectos\Proyecto 2\facturador\facturador-demo\src\main\java\dev\facturador\global\infrastructure\spring\cloud\GoogleDriveService.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/commands/SaveBannerCommand.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/model/BannerRestModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/write/SaveBuildingPlanResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/SaveBannerCommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/application/UserRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/expositions/domain/SaveExpositionCommand.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/ServletInitializer.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/write/SaveMuseumAndUserResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/InitQuery.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/query/QueryHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/User.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/SaveContactCommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/SaveDescriptionCommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/expositions/application/ExpositionRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/repository/BannerRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/commands/SaveMuseumAndUserCommand.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/model/TokenModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/adapters/SpringEventBus.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/model/MuseumProjection.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/write/SaveDescriptionResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/application/handlers/RefreshQueryHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/write/SaveOpeningHoursResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/repository/ContactRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/commands/SaveDescriptionCommand.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/entity/MuseumDescription.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/model/ContactRestModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/SaveOpeningHoursCommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/commands/SaveBuildingPlanCommand.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/commands/SaveContactCommand.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/model/TokenUpdated.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/expositions/application/SaveExpositionCommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/security/AuthorizationFilter.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/entity/MuseumBanner.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/PagingMuseumsQuery.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/entity/OpeningHours.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/repository/DescriptionRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/event/EventBus.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/model/PagedResponse.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/security/SecurityConfig.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/command/CommandBus.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/command/CommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/application/handlers/LoginQueryHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/infrastructure/LoginResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/read/GetMuseumResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/entity/Museum.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/command/Command.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/model/BuildingPlanRestModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/repository/OpeningHoursRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/SaveMuseumAndUserCommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/PartenonApplication.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/infrastructure/RefreshResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/model/OpeningHoursRestModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/security/JWTEntryPoint.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/model/AuthUserRestModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/infrastructure/AuthenticationFilterForLogin.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/write/SaveBannerResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/infrastructure/InitResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/adapters/SpringCommandBus.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/model/UserRestModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/expositions/infrastructure/SaveExpositionsResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/expositions/domain/model/ExpositionRestModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/entity/MuseumContact.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/resource/GlobalExceptionHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/query/Query.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/security/JWTProvider.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/model/DescriptionModel.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/security/CORSFilter.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/PagingMuseumsQueryHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/adapters/CustomUserDetailsService.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/event/EventHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/application/handlers/InitQueryHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/repository/MuseumRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/expositions/domain/Expositions.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/LoginQuery.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/repository/PlanRepository.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/commands/SaveOpeningHoursCommand.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/expositions/infrastructure/ListExpositionResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/GetMuseumQuery.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/model/Page.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/event/Event.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/SocialMediaType.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/read/PagingMuseumsResource.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/model/CustomUserDetails.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/SaveBuildingPlanCommandHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/domain/entity/MuseumPlan.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/application/handlers/GetMuseumQueryHandler.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/domain/abstractcomponents/query/QueryBus.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/global/infrastructure/adapters/SpringQueryBus.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/user/domain/RefreshQuery.java
+/home/juan/Documents/web-programming/partenon/Partenon/src/main/java/dev/partenon/museum/infrastructure/write/SaveContactResource.java
