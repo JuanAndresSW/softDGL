@@ -1,7 +1,7 @@
 package dev.partenon.expositions.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.partenon.museum.domain.entity.Museum;
+import dev.partenon.museumcontext.core.doamin.Museum;
 import lombok.*;
 
 import javax.persistence.*;

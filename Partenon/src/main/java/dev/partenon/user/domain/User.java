@@ -1,8 +1,8 @@
 package dev.partenon.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.partenon.museum.domain.commands.SaveMuseumAndUserCommand;
-import dev.partenon.museum.domain.entity.Museum;
+import dev.partenon.museumcontext.core.doamin.SaveMuseumAndUserCommand;
+import dev.partenon.museumcontext.core.doamin.Museum;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

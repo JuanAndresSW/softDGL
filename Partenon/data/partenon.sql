@@ -32,7 +32,7 @@ CREATE TABLE `expositions` (
   PRIMARY KEY (`exposition_id`),
   KEY `museum_exposition_fk_idx` (`museum_id`),
   CONSTRAINT `museum_exposition_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `museum` (
   PRIMARY KEY (`museum_id`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   CONSTRAINT `user_museum_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE `museum_banner` (
   PRIMARY KEY (`museum_banner_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_banner_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +115,7 @@ CREATE TABLE `museum_contact` (
   PRIMARY KEY (`museum_contact_id`),
   KEY `museum_contact_fk_idx` (`museum_id`),
   CONSTRAINT `museum_contact_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +141,7 @@ CREATE TABLE `museum_description` (
   PRIMARY KEY (`museum_description_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_description_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,7 +167,7 @@ CREATE TABLE `museum_plan` (
   PRIMARY KEY (`museum_plan_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_plan_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,6 +177,33 @@ CREATE TABLE `museum_plan` (
 LOCK TABLES `museum_plan` WRITE;
 /*!40000 ALTER TABLE `museum_plan` DISABLE KEYS */;
 /*!40000 ALTER TABLE `museum_plan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `museum_score`
+--
+
+DROP TABLE IF EXISTS `museum_score`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `museum_score` (
+  `museum_id` int unsigned NOT NULL,
+  `user_email_id` int unsigned NOT NULL,
+  `score` int unsigned NOT NULL,
+  PRIMARY KEY (`museum_id`,`user_email_id`),
+  KEY `user_email_score_fk_idx` (`score`),
+  CONSTRAINT `museum_score_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`),
+  CONSTRAINT `user_email_score_fk` FOREIGN KEY (`score`) REFERENCES `user_email` (`user_email_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `museum_score`
+--
+
+LOCK TABLES `museum_score` WRITE;
+/*!40000 ALTER TABLE `museum_score` DISABLE KEYS */;
+/*!40000 ALTER TABLE `museum_score` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -199,7 +226,7 @@ CREATE TABLE `opening_hours` (
   PRIMARY KEY (`opening_hours_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_opening_hours_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +253,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,6 +263,30 @@ CREATE TABLE `user` (
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_email`
+--
+
+DROP TABLE IF EXISTS `user_email`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_email` (
+  `user_email_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(128) NOT NULL,
+  PRIMARY KEY (`user_email_id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_email`
+--
+
+LOCK TABLES `user_email` WRITE;
+/*!40000 ALTER TABLE `user_email` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_email` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -247,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-17 16:29:11
+-- Dump completed on 2022-09-19 22:20:34
