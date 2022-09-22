@@ -3,10 +3,12 @@ package dev.partenon.museumcontext.core.doamin;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.partenon.expositions.domain.Expositions;
 import dev.partenon.museumcontext.banner.doamin.MuseumBanner;
-import dev.partenon.museumcontext.contact.doamin.MuseumContact;
+import dev.partenon.museumcontext.contact.doamin.entity.MuseumContact;
 import dev.partenon.museumcontext.description.doamin.MuseumDescription;
 import dev.partenon.museumcontext.openinghours.doamin.OpeningHours;
 import dev.partenon.museumcontext.plan.doamin.MuseumPlan;
+import dev.partenon.museumcontext.appointment.domain.Appointment;
+import dev.partenon.museumcontext.tours.domain.entity.MuseumTour;
 import dev.partenon.user.domain.User;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -66,6 +68,12 @@ public final class Museum implements Serializable {
 
     @OneToOne(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     private MuseumDescription museumDescription;
+
+    @OneToMany(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
+    private List<MuseumTour> tours;
+
+    @OneToMany(mappedBy = "museum", cascade = {CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
+    private List<Appointment> appointments;
 
     public Museum(Long museumId) {
         this.museumId = museumId;

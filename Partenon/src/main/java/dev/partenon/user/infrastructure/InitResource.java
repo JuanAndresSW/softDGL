@@ -35,11 +35,11 @@ public class InitResource {
                 .authToken(request.getHeader(AUTHORIZATION))
                 .build();
 
-        var username = queryBus.handle(query);
+        var museumId = queryBus.handle(query);
 
         response.setContentType(APPLICATION_JSON_VALUE);
         response.setStatus(HttpServletResponse.SC_OK);
-        new ObjectMapper().writeValue(response.getOutputStream(), username);
+        new ObjectMapper().writeValue(response.getOutputStream(), museumId);
     }
 
 

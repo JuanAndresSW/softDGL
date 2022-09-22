@@ -5,6 +5,7 @@ import dev.partenon.user.domain.model.AuthUserRestModel;
 import dev.partenon.user.domain.model.TokenModel;
 import dev.partenon.user.domain.LoginQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class LoginResource {
     private QueryBus queryBus;
 
     @PostMapping("/login")
-    public ResponseEntity<TokenModel> login(@RequestBody @Valid AuthUserRestModel authUserRestModel) throws Exception {
+    public HttpEntity<TokenModel> login(@RequestBody @Valid AuthUserRestModel authUserRestModel) throws Exception {
         var query = LoginQuery.builder()
                 .usernameOrEmail(authUserRestModel.getUsernameOrEmail())
                 .password(authUserRestModel.getPassword())

@@ -20,7 +20,7 @@ import java.io.Serializable;
 @Builder
 public final class OpeningHours implements Serializable {
     public static final Long serialVersionUID = 1L;
-
+    @JsonIgnore
     @Id
     @Column(name = "opening_hours_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

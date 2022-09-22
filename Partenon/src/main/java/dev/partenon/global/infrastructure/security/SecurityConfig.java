@@ -46,8 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/login").permitAll()
-                .antMatchers(HttpMethod.GET,"/api/museums/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/museums/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/expositions/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/tours/**").permitAll()
                 .anyRequest().authenticated();
 
         //Filtros

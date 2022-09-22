@@ -1,9 +1,10 @@
 package dev.partenon.museumcontext.core.infrastructure;
 
 import dev.partenon.global.domain.abstractcomponents.query.QueryBus;
-import dev.partenon.museumcontext.core.doamin.GetMuseumQuery;
+import dev.partenon.museumcontext.core.doamin.query.GetMuseumQuery;
 import dev.partenon.museumcontext.core.doamin.Museum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class GetMuseumResource {
     }
 
     @GetMapping
-    public ResponseEntity<Museum> getMuseum(
+    public HttpEntity<Museum> getMuseum(
             @RequestParam(value = "key") String museumId)
             throws Exception {
         var query = GetMuseumQuery.builder()

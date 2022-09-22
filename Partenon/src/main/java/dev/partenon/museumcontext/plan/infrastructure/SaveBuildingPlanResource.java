@@ -5,6 +5,7 @@ import dev.partenon.museumcontext.plan.doamin.SaveBuildingPlanCommand;
 import dev.partenon.museumcontext.plan.doamin.BuildingPlanRestModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 
-@Slf4j
 @RestController
 @RequestMapping("/api/museums")
 public class SaveBuildingPlanResource {
@@ -25,8 +25,8 @@ public class SaveBuildingPlanResource {
 
     @PreAuthorize("isAuthenticated()")
     @PostMapping("/plans")
-    public ResponseEntity<Void> saveBuildingPlan(@RequestBody @Valid BuildingPlanRestModel buildingPlan,
-                                                 @RequestParam("key") String museumId) throws Exception{
+    public HttpEntity<Void> saveBuildingPlan(@RequestBody @Valid BuildingPlanRestModel buildingPlan,
+                                             @RequestParam("key") String museumId) throws Exception{
         var command = SaveBuildingPlanCommand.builder()
                 .buildingPlan(buildingPlan.getBuildingPlan())
                 .museumId(Long.parseLong(museumId))
@@ -35,7 +35,7 @@ public class SaveBuildingPlanResource {
         commandBus.handle(command);
 
         return ResponseEntity.created(
-                new URI("http://localhost:8080/api/museums/building&key=".concat(museumId)))
+                new URI("http://localhost:8080/api/museums/plans&key=".concat(museumId)))
                 .build();
     }
 }

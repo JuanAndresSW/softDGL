@@ -4,7 +4,7 @@ import dev.partenon.global.domain.abstractcomponents.query.QueryHandler;
 import dev.partenon.global.domain.model.Page;
 import dev.partenon.global.domain.model.PagedResponse;
 import dev.partenon.museumcontext.core.application.MuseumRepository;
-import dev.partenon.museumcontext.core.doamin.PagingMuseumsQuery;
+import dev.partenon.museumcontext.core.doamin.query.PagingMuseumsQuery;
 import dev.partenon.museumcontext.core.doamin.models.MuseumProjection;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -51,6 +51,12 @@ public class PagingMuseumsQueryHandler implements QueryHandler<PagedResponse<Mus
                 pages.getTotalElements(), pages.getTotalPages(), pages.isLast());
     }
 
+    /**
+     * Crea el objeto {@link Pageable} necesario para la paginación
+     *
+     * @param page Contiene los parámetros  necesarios para crear el objeto
+     * @return
+     */
     private Pageable createPageable(Page page) {
         if (page.getOrder().equals("asc")) {
             return PageRequest.of(page.getIndex(), page.getSize(), Sort.Direction.ASC, page.getSort());
@@ -59,26 +65,26 @@ public class PagingMuseumsQueryHandler implements QueryHandler<PagedResponse<Mus
     }
 
     /**
-     * Comprueba que lo datos de paginacion tengan sentido
+     * Comprueba que lo datos para crear el objeto {@code Pageable} sean válidos
      *
-     * @param index Numero de pagina
-     * @param size  Tamaño de pagina
-     * @param order Orden puede ser ascendente o descendiente
+     * @param index Número de página
+     * @param size  Tamaño de página
+     * @param order Orden puede ser ascendente o descendente
      */
     private void validatePageNumberAndSize(int index, int size, String order) throws Exception {
         if (index < 0) {
-            throw new Exception("Page number cannot be less than zero.");
+            throw new Exception("Número de página no puede ser menor a 0");
         }
 
         if (size < 0) {
-            throw new Exception("Size number cannot be less than zero.");
+            throw new Exception("Tamaño de página no puede ser menor a 0");
         }
 
-        if (size > 12) {
-            throw new Exception("Page size must not be greater than " + 12);
+        if (size > 25) {
+            throw new Exception("Tamaño de página no puede ser mayor a " + 25);
         }
         if (!order.equals("asc") && !order.equals("desc")) {
-            throw new Exception("Order not found");
+            throw new Exception("Orden no válidos");
         }
     }
 }

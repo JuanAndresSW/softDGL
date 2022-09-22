@@ -16,6 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `appointment`
+--
+
+DROP TABLE IF EXISTS `appointment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `appointment` (
+  `appointment_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `appointment_date` date NOT NULL,
+  `language` varchar(20) NOT NULL,
+  `requested_name` varchar(30) NOT NULL,
+  `selected_tour` varchar(30) NOT NULL,
+  `museum_id` int unsigned NOT NULL,
+  PRIMARY KEY (`appointment_id`),
+  KEY `museum_shifts_fk_idx` (`museum_id`),
+  CONSTRAINT `museum_shifts_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `appointment`
+--
+
+LOCK TABLES `appointment` WRITE;
+/*!40000 ALTER TABLE `appointment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `appointment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `expositions`
 --
 
@@ -32,7 +61,7 @@ CREATE TABLE `expositions` (
   PRIMARY KEY (`exposition_id`),
   KEY `museum_exposition_fk_idx` (`museum_id`),
   CONSTRAINT `museum_exposition_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +91,7 @@ CREATE TABLE `museum` (
   PRIMARY KEY (`museum_id`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   CONSTRAINT `user_museum_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +117,7 @@ CREATE TABLE `museum_banner` (
   PRIMARY KEY (`museum_banner_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_banner_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,14 +137,13 @@ DROP TABLE IF EXISTS `museum_contact`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `museum_contact` (
-  `museum_contact_id` int unsigned NOT NULL AUTO_INCREMENT,
-  `type` enum('TWITTER','FACEBOOK','WSP','EMAIL','INSTAGRAM') NOT NULL,
   `museum_id` int unsigned NOT NULL,
+  `type` enum('TWITTER','FACEBOOK','WSP','EMAIL','INSTAGRAM') NOT NULL,
   `museum_contact` varchar(45) NOT NULL,
-  PRIMARY KEY (`museum_contact_id`),
+  PRIMARY KEY (`museum_id`,`type`),
   KEY `museum_contact_fk_idx` (`museum_id`),
   CONSTRAINT `museum_contact_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +169,7 @@ CREATE TABLE `museum_description` (
   PRIMARY KEY (`museum_description_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_description_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,7 +195,7 @@ CREATE TABLE `museum_plan` (
   PRIMARY KEY (`museum_plan_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_plan_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,6 +235,31 @@ LOCK TABLES `museum_score` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `museum_tour`
+--
+
+DROP TABLE IF EXISTS `museum_tour`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `museum_tour` (
+  `museum_id` int unsigned NOT NULL,
+  `tour_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`tour_name`,`museum_id`),
+  KEY `museum_tour_fk_idx` (`museum_id`),
+  CONSTRAINT `museum_tour_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `museum_tour`
+--
+
+LOCK TABLES `museum_tour` WRITE;
+/*!40000 ALTER TABLE `museum_tour` DISABLE KEYS */;
+/*!40000 ALTER TABLE `museum_tour` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `opening_hours`
 --
 
@@ -226,7 +279,7 @@ CREATE TABLE `opening_hours` (
   PRIMARY KEY (`opening_hours_id`),
   UNIQUE KEY `museum_id_UNIQUE` (`museum_id`),
   CONSTRAINT `museum_opening_hours_fk` FOREIGN KEY (`museum_id`) REFERENCES `museum` (`museum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -253,7 +306,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -298,4 +351,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-19 22:20:34
+-- Dump completed on 2022-09-22 16:47:46
