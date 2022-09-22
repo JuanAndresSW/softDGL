@@ -14,8 +14,8 @@ export default function Pagination({page,setPage, totalPages, last}:props): JSX.
         <menu data-pagination>
 
             <BiCaretLeft 
-            onMouseDown={page===0?null:()=>setPage(page--)}
-            className={page===0?"unactive":null}/>
+            onMouseDown={ page===0 ? null : ()=>setPage(page--) }
+            className=  { page===0 ? "unactive" : null}/>
 
             <div><p>{page+1}/{totalPages}</p></div>
 

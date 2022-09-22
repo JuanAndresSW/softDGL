@@ -1,6 +1,6 @@
 import React from "react";  
 import './Image.css';
-import defaultLogo from 'assets/svg/logo.svg';
+import defaultPhoto from 'assets/svg/default-photo.svg';
 import { BsFillXCircleFill } from "react-icons/bs";
 
 type props = {
@@ -19,7 +19,7 @@ type props = {
  * @param props.setter    - Función controladora del estado de la constante que almacena la imágen.
  * @param props.img       - Valor File de la imágen a mostrar.
  */
-export default function Image({label, note, fallback=defaultLogo, setter, img}:props) {
+export default function Image({label, note, fallback=defaultPhoto, setter, img}:props) {
 
   return (
     <label className="image">
@@ -39,7 +39,7 @@ export default function Image({label, note, fallback=defaultLogo, setter, img}:p
           }}
         />
         <div>
-        <img src={img?.size>10? URL.createObjectURL(img):'https://www.pngitem.com/pimgs/m/6-67022_dslr-camera-vector-icon-camera-vector-icon-png.png'} />
+        <img src={img?.size>10? URL.createObjectURL(img):fallback} />
         </div>
 
     </label>

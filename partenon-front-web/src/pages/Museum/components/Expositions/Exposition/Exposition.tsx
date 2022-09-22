@@ -1,4 +1,4 @@
-import { FlexDiv } from "components/wrappers";
+import { Div } from "components/wrappers";
 import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import './Exposition.css'
@@ -22,23 +22,23 @@ export default function Exposition({ exposition }: props): JSX.Element {
         <div className="exposition">
 
             <div onClick={()=>setExtended(!extended)} data-expo-header>
-                <FlexDiv justify="space-between">
+                <Div flex justify="space-between">
                     <div>
                         <h2>{exposition.name}</h2>
                         <h3>{exposition.category}</h3>
                     </div>
                     
                     {extended?<FiEyeOff/>:<FiEye/>}
-                </FlexDiv>
+                </Div>
                 
             </div>
 
             {!extended? null:
             <div data-expo-body>
-                <FlexDiv align="flex-start">
-                    <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"/>
+                <Div flex align="flex-start">
+                    <img src={exposition.photo?.size>10? URL.createObjectURL(exposition.photo) : ''}/>
                     <p>{exposition.description}</p>
-                </FlexDiv>
+                </Div>
                 
             </div>}
 

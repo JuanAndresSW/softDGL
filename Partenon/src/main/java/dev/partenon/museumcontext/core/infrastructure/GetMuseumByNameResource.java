@@ -14,7 +14,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/api/museums")
-public class GetMuseumByNameResource {
+public class    GetMuseumByNameResource {
     private final QueryBus queryBus;
 
     @Autowired

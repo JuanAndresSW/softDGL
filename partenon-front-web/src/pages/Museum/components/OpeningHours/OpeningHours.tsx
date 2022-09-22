@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FlexDiv } from "components/wrappers";
-import { Button, Field } from "components/formComponents";
+import { Div } from "components/wrappers";
+import { Button, Field, Message } from "components/formComponents";
 
 import "./OpeningHours.css";
 import postOpeningHours from "../../services/postOpeningHours";
@@ -13,14 +13,15 @@ type props = {
 
 
 export default function OpeningHours({openingHours, editing}: props) {
+    const [success,     setSuccess] =   useState(false);
 
-    const [monday,      setMonday] =    useState();
-    const [tuesday,     setTuesday] =   useState();
-    const [wednesday,   setWednesday] = useState();
-    const [thursday,    setThursday] =  useState();
-    const [friday,      setFriday] =    useState();
-    const [saturday,    setSaturday] =  useState();
-    const [sunday,      setSunday] =    useState();
+    const [monday,      setMonday] =    useState(openingHours?.monday);
+    const [tuesday,     setTuesday] =   useState(openingHours?.tuesday);
+    const [wednesday,   setWednesday] = useState(openingHours?.wednesday);
+    const [thursday,    setThursday] =  useState(openingHours?.thursday);
+    const [friday,      setFriday] =    useState(openingHours?.friday);
+    const [saturday,    setSaturday] =  useState(openingHours?.saturday);
+    const [sunday,      setSunday] =    useState(openingHours?.sunday);
 
 
     function sendHours() {
@@ -33,15 +34,15 @@ export default function OpeningHours({openingHours, editing}: props) {
             saturday:   saturday,
             sunday:     sunday
         }).then(response=>{
-            if (response.ok) window.location.reload();
+            if (response.ok) setSuccess(true);
         })
     }
 
     return (
-        <div>
+        <div  className="opening-hours">
            {editing?
 
-            <FlexDiv align="flex-end">
+            <Div flex align="flex-end">
                 <HourEditor day="Lunes"     bind={[monday,      setMonday]}     />
                 <HourEditor day="Martes"    bind={[tuesday,     setTuesday]}    />
                 <HourEditor day="Miércoles" bind={[wednesday,   setWednesday]}  />
@@ -50,11 +51,12 @@ export default function OpeningHours({openingHours, editing}: props) {
                 <HourEditor day="Sábado"    bind={[saturday,    setSaturday]}   />
                 <HourEditor day="Domingo"   bind={[sunday,      setSunday]}     />
                 <Button onClick={()=>sendHours()}>+ agregar horarios</Button>
-            </FlexDiv>
+                {!success?null:<Message type="success" message="se han guardado los horarios" />}
+            </Div>
 
             :
 
-            <FlexDiv>
+            <Div flex cond={!!openingHours}>
                 <Hours day="Lunes"      hours={openingHours.monday}/>
                 <Hours day="Martes"     hours={openingHours.tuesday}/>
                 <Hours day="Miércoles"  hours={openingHours.wednesday}/>
@@ -62,14 +64,16 @@ export default function OpeningHours({openingHours, editing}: props) {
                 <Hours day="Viernes"    hours={openingHours.friday}/>
                 <Hours day="Sábado"     hours={openingHours.saturday}/>
                 <Hours day="Domingo"    hours={openingHours.sunday}/>
-            </FlexDiv>} 
+            </Div>
+            }
+            
         </div>
 
     )
 }
 
 function Hours({day, hours}: {day: string, hours: string}): JSX.Element {
-    return <div className="opening-hours">
+    return <div>
         <p>{day}</p>
         <p>{hours?hours:'-'}</p>
     </div>

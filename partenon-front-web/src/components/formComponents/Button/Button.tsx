@@ -4,7 +4,8 @@ type props = {
     children: React.ReactNode,
     type?: ("button"|"submit"|"delete"),
     onClick?: Function,
-    style?: React.CSSProperties
+    style?: React.CSSProperties,
+    title?: string
 };
 
 /**
@@ -13,9 +14,10 @@ type props = {
  * @param props.type - El tipo de botón.
  * @param props.onClick - La función de evento de clic.
  */
-export default function Button({children, type="button", onClick=()=>{return}, style}:props): JSX.Element {
+export default function Button({children, type="button", onClick=()=>{return}, style, title}:props): JSX.Element {
     return (
         <button 
+        title={title}
         style={style}
         type={type==="submit"?"submit":"button"} 
         className={type==="delete"?"button delete":"button"}

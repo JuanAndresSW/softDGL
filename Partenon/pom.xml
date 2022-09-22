@@ -15,7 +15,7 @@
     <version>0.0.1</version>
     <packaging>war</packaging>
     <name>partenon</name>
-    <description>Aplicación para generar documentos comerciales</description>
+    <description>Aplicación para administrar y explorar museos</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

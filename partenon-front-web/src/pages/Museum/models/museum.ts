@@ -1,4 +1,7 @@
 import openingHours from './openingHours';
+import contact from "./contact";
+import exposition from "./exposition";
+import tour from "./tour";
 
 type museum = {
     basicData: {
@@ -11,20 +14,10 @@ type museum = {
         banner: Blob,
     },
     plan: Blob,
-
-    contact: {
-        type: string,
-        value: string
-    }[],
-
+    contacts: contact[],
     openingHours: openingHours,
-
-    expositions: {
-        name: string,
-        category: string,
-        photo: Blob,
-        description: string
-    }[]
+    expositions: exposition[],
+    tours: tour[]
 
 }
 export default museum;

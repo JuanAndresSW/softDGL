@@ -5,7 +5,7 @@ import Response from 'models/Response';
 /**Tries to sign-in using the provided data. */
 export default async function tryLogin(usernameOrEmail: string, password: string): Promise<Response> {
     
-  const response = await ajax("POST", "auth/accounts/log-in", {
+  const response = await ajax("POST", "auth/login", {
     body: JSON.stringify({
       usernameOrEmail: usernameOrEmail.trim(),
       password:        password.trim(),

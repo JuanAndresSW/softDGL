@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { museumID, provinces } from "utilities/constants";
+import { provinces } from "utilities/constants";
 
 //Componentes de formulario.
 import { Button, Dropdown, Field, Form, Message } from 'components/formComponents';
 import { Loading } from "components/standalone";
-import { FlexDiv } from "components/wrappers";
+import { Div } from "components/wrappers";
 import { BiHome } from "react-icons/bi";
 
 //Relacionado a la cuenta.
@@ -81,7 +81,7 @@ export default function SignUp(): JSX.Element {
 
       tryLogin(username, password);
       setError("");
-      navigate("?museum="+museumID);
+      navigate("/mi-museo");
     })
   }
 
@@ -97,37 +97,37 @@ export default function SignUp(): JSX.Element {
       <Field label="Tu dirección de correo electrónico"
       bind={[email, setEmail]} validator={Valid.email(email)} />
 
-      <FlexDiv>
+      <Div flex>
         <Field label="Elige una contraseña" 
         bind={[password, setPassword]} type="password" validator={Valid.password(password)} />
         <Field label="Vuelve a escribir la contraseña" bind={[passwordMatch, setPasswordMatch]}
         type="password" validator={password===passwordMatch} />
-      </FlexDiv>
+      </Div>
 
       <Field label="¿Cómo se llamará tu museo?" bind={[museumName, setMuseumName]}
       validator={Valid.names(museumName)} />
 
-      <FlexDiv>
+      <Div flex>
         <Dropdown options={provinces} value={province} onChange={setProvince} />
-      </FlexDiv>
+      </Div>
 
-      <FlexDiv>
+      <Div flex>
         <Field label="Ciudad" bind={[city, setCity]}
         validator={Valid.names(city)} />
         <Field label="Calle" bind={[street, setStreet]}
         validator={Valid.names(street)} />
         <Field label="Altura" bind={[addressNumber, setAddressNumber]}
         validator={Valid.addressNumber(addressNumber)} />
-      </FlexDiv>
+      </Div>
 
             
       <Message type="error" message={error} />
 
-      <FlexDiv justify='space-between'>
+      <Div flex justify='space-between'>
         <Link to="/ingresar">Acceder</Link>
 
         {loading?<Loading/>:<Button type="submit">Crear</Button>}
-      </FlexDiv>
+      </Div>
 
     </Form>
    

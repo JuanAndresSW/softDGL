@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Exposition from "./Exposition/Exposition";
+import {Button, Field, Image, Message, Textarea} from "components/formComponents";
+import { Div } from "components/wrappers";
+import postExposition from "../../services/postExposition";
 import "./Expositions.css";
-import {Button, Field, Image, Textarea} from "components/formComponents";
-import { FlexDiv } from "components/wrappers";
 
 type props = {
 expositions: {  
@@ -20,13 +21,26 @@ export default function Expositions({expositions, editing}: props) {
     const [category, setCategory] = useState();
     const [description, setDescription] = useState();
 
+    const [success, setSuccess] = useState(false);
+
+    function saveNewExpo() {
+        postExposition({
+            name:        name,
+            category:    category,
+            photo:       photo,
+            description: description
+        })
+        .then(response=>{
+            if (response.ok) setSuccess(true);
+        })
+    }
+
     return <div className="expositions">
+
         {expositions.map((exposition)=><Exposition key={exposition.name} exposition={exposition}/>)}
 
-
-        {!editing?null:
-        
-        <FlexDiv>
+        <Div flex cond={editing}>
+            
             <Image setter={setPhoto} img={photo}/>
 
             <div>
@@ -36,9 +50,13 @@ export default function Expositions({expositions, editing}: props) {
 
             <div>
             <Textarea label="descripción" maxLength={100} bind={[description, setDescription]}/>
-            <Button>+ nueva exposición</Button>
+            <Button onClick={()=>saveNewExpo()}>+ nueva exposición</Button>
+            
+            <Div cond={success}>
+            <Message type="success" message="Se ha agregado una nueva exposición" />
+            </Div>
             </div>
             
-        </FlexDiv>}
+        </Div>
     </div>
 }

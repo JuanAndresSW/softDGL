@@ -33,7 +33,7 @@
     right: .1rem;
 }
 .image:hover {
-    background-color: #eee;
+    background-color: #55f;
 }
 .image svg:hover {
     color: #f44;

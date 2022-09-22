@@ -1,0 +1,39 @@
+[data-museum-item] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 10rem;
+  margin: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+[data-museum-item]:hover {
+  background-color: #eee;
+  outline: 1px solid #0070f0;
+}
+
+[data-museum-item] img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+[data-museum-item] h2, [data-museum-item] p {
+  color: #222;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: .2rem .4rem;
+}
+
+[data-museum-item] h2 {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=MuseumItem.css.map */

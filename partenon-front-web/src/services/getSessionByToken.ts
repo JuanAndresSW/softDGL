@@ -15,11 +15,12 @@ export default async function getSessionByToken(): Promise<Response> {
 
 
   let tokenResponse = await ajax("GET","auth/init", { token: access });
-  if (tokenResponse.status === 200) return success(tokenResponse);
+  if (tokenResponse.ok)
+  return success({...tokenResponse, content: JSON.stringify({museumId: tokenResponse.content})});
   
   //If the access token wasn't valid, try to get a new token.
   tokenResponse = await ajax("POST","auth/refresh", { token: refresh });
-  if (tokenResponse.status === 200) return success(tokenResponse);
+  if (tokenResponse.ok) return success(tokenResponse);
 
   //If couln't get a new token, give up.
   return new Response("Los tokens almacenados son erróneos o han expirado.", '', 400, false);

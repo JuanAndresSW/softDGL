@@ -1,12 +1,9 @@
 import Response from 'models/Response';
 import ajax from 'ports/ajax';
-import getToken from "services/getToken";t';
+import getToken from "services/getToken";
 import {museumID} from "utilities/constants";
+import contact from '../models/contact';
 
-
-type contact = {
-    value: string, type: string
-}
 
 /**Guarda el contact del museo guardado en sesión. */
 export default async function postContact(contact: contact): Promise<Response> {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "assets/svg/logo.svg";
+import {MdMuseum} from "react-icons/md";
 import './Header.css';
 import { museumID } from "utilities/constants";
 
@@ -15,7 +15,7 @@ return (
   <header>
     
 
-    {auth?  <Link to={`/mi-museo`} title="Mi museo" id="logo"><img src={logo} /></Link>
+    {auth?  <Link to={`/mi-museo`} title="Mi museo" id="logo">Mi museo<MdMuseum /></Link>
 
     :
 

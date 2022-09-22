@@ -7,5 +7,5 @@ import openingHours from '../models/openingHours';
 
 /**Guarda las horas de apertura del museo guardado en sesión. */
 export default async function postOpeningHours(openingHours: openingHours): Promise<Response> {
-    return await ajax("POST", "museums/openings?key="+museumID, { token: getToken("access") });
+    return await ajax("POST", "museums/openings?key="+museumID, { body:JSON.stringify(openingHours), token: getToken("access") });
 } 

@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { Button, Image } from "components/formComponents";
-import { FlexDiv } from "components/wrappers";
+import { Div } from "components/wrappers";
+import postPlan from "../../services/postPlan";
 
 type props = {
     plan: Blob,
     editing: boolean
 }
 export default function Plan({plan, editing}: props): JSX.Element {
-    const [newPlan, setNewPlan] = useState();
+    const [newPlan, setNewPlan] = useState(plan);
+
+    function saveMuseumPlan(): void {
+        postPlan(newPlan);
+    }
 
     return editing?
-    <FlexDiv>
-        <Image setter={setNewPlan} img={plan} />
-        <Button>Guardar plano</Button>
-    </FlexDiv>:
-    <img src={URL.createObjectURL(plan)} alt="" />
+    <Div flex>
+        <Image setter={setNewPlan} img={newPlan} />
+        <Button onClick={()=>saveMuseumPlan()}>Guardar plano</Button>
+    </Div>:
+    <img src={newPlan?URL.createObjectURL(newPlan): ''} alt="" />
 }

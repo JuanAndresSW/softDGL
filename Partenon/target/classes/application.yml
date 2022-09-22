@@ -28,7 +28,7 @@ spring:
     allow-circular-references: false
     banner-mode: off
   datasource:
-    password: admin
+    password: root
     url: jdbc:mysql://localhost:3306/partenon_db?useSSL=true&useTimezone=true
     username: root
     tomcat:
