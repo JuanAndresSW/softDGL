@@ -2,6 +2,7 @@ import museum from '../models/museum';
 import {base64ToBlob} from "utilities/conversions";
 import exposition from '../models/exposition';
 import contact from '../models/contact';
+import appointment from '../models/appointment';
 
 /**Adapta el objeto de museo recibido al formato esperado.*/
 export default async function jsonToMuseum(json: string): Promise<museum> {
@@ -20,7 +21,7 @@ export default async function jsonToMuseum(json: string): Promise<museum> {
         plan: museum.museumPlan === null ? null : await base64ToBlob(museum.museumPlan?.buildingPlan),
     
         contacts: museum.museumContacts.map((contact:any): contact => { return {
-            type: contact.type, value: contact.museumContact
+            type: contact.contactPK.type, value: contact.museumContact
         }}),
 
         openingHours: museum.openingHours,
@@ -33,6 +34,13 @@ export default async function jsonToMuseum(json: string): Promise<museum> {
             description:    exposition.description
         }})),
 
-        tours: museum.tours
+        tours: museum.tours?.map((tour: any)=>tour.tourPK.tourName),
+
+        appointments: museum.appointments.map((appointment: any):appointment => { return {
+            language:   appointment.language,
+            date:       appointment.appointmentDate,
+            name:       appointment.requestedName,
+            tour:       appointment.selectedTour
+        }})
     }
 }

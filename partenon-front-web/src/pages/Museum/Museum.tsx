@@ -8,6 +8,7 @@ import OpeningHours from "./components/OpeningHours/OpeningHours";
 import Expositions from "./components/Expositions/Expositions";
 import Plan from "./components/Plan/Plan";
 import Tours from "./components/Tours/Tours";
+import Appointments from "./components/Appointments/Appointments";
 
 
 //Componentes globales.
@@ -81,17 +82,18 @@ export default function Museum({hasEditingPermissions=false}): JSX.Element {
             </Div>
 
 
-            <Div >
+            <Div cond={museum.tours?.length>0||editing}>
                 <Retractable     label="Recorridos">
-                    
-                <Tours tours={testTours} editing={editing} isAdmin={hasEditingPermissions}/>
-
+                    <Tours tours={museum.tours} editing={editing} />
                 </Retractable>
+            </Div>
+
+
+            <Div cond={hasEditingPermissions}>
+                <Appointments appointments={museum.appointments} />
             </Div>
 
             
         </Section>
     </>    
 }
-
-//cond={museum.tours?.length>0||editing}

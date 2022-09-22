@@ -10,4 +10,5 @@ public class SaveContactCommand extends Command {
     private String contact;
     private String type;
     private Long museumId;
+    private Boolean flag;
 }

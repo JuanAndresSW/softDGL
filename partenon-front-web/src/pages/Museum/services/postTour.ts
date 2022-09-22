@@ -6,6 +6,6 @@ import {museumID}   from "utilities/constants";
 /**Guarda un recorrido del museo guardado en sesión. */
 export default async function postTour(tourName: string): Promise<Response> {
     return await ajax("POST", "museums/tours?key="+museumID, { body:JSON.stringify({
-        name: tourName
+        tourName: tourName
     }), token: getToken("access") });
 }

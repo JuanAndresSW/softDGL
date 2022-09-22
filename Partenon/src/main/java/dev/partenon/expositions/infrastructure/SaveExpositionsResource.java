@@ -5,6 +5,7 @@ import dev.partenon.expositions.domain.model.ExpositionRestModel;
 import dev.partenon.global.domain.abstractcomponents.command.CommandBus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,8 @@ public class SaveExpositionsResource {
 
     @PreAuthorize("isAuthenticated()")
     @PostMapping
-    public ResponseEntity<Void> saveBanners(@RequestBody @Valid ExpositionRestModel expositionRestModel,
-                                            @RequestParam("key") long museumId) throws Exception{
+    public HttpEntity<Void> saveBanners(@RequestBody @Valid ExpositionRestModel expositionRestModel,
+                                        @RequestParam("key") long museumId) throws Exception{
         var command = SaveExpositionCommand.builder()
                 .photo(expositionRestModel.getPhoto())
                 .description(expositionRestModel.getDescription())

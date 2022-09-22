@@ -25,7 +25,7 @@ public class InitQueryHandler implements QueryHandler<String, InitQuery> {
             var user = repository.findByUsernameOrEmail(username, username);
             if(user.isEmpty())
                 return null;
-            return user.get().getUserId().toString();
+            return user.get().getMuseum().getMuseumId().toString();
         }
         return null;
     }

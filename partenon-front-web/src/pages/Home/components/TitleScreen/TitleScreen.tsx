@@ -1,34 +1,38 @@
 import { Field } from "components/formComponents";
 import { Div, Section } from "components/wrappers";
-import { Loading } from "components/standalone";
+import { Loading, Pagination } from "components/standalone";
 import MuseumItem from "../MuseumItem/MuseumItem";
 import React, { useEffect, useState } from "react";
 import shortMuseum from "../../models/shortMuseum";
 import "./TitleScreen.css";
 import parthenon from "assets/parthenon.jpg";
 import getMuseums from "../../services/getMuseums";
-//import listOfMuseums from "pages/Home/models/listOfMuseums";
+import listOfMuseums from "pages/Home/models/listOfMuseums";
 
 
 
 export default function TitleScreen(): JSX.Element {
 
   const [museums,     setMuseums]: [shortMuseum[], React.Dispatch<React.SetStateAction<shortMuseum[]>>] = useState([]);
-  //const [totalPages,  setTotalPages] =  useState(0);
-  //const [last,        setLast] =        useState(true);
+  const [totalPages,  setTotalPages] =  useState(0);
+  const [last,        setLast] =        useState(true);
 
   const [q,           setQ] =           useState('');
-  //const [page,        setPage] =        useState(0);
+  const [page,        setPage] =        useState(0);
   const [loading,     setLoading] =     useState(false);
  
 
   function search() {
     setLoading(true);
 
-    getMuseums(q).then(response=>{
-
+    if (q)
+    getMuseums(q, page, "museumName").then(response=>{
       if (!response?.ok) return;
-      setMuseums    (response.content);
+
+      const listOfMuseums: listOfMuseums = response.content;
+      setMuseums    (listOfMuseums.museums);
+      setTotalPages (listOfMuseums.totalPages);
+      setLast       (listOfMuseums.last);
       setLoading    (false);
     });
   }
@@ -45,7 +49,7 @@ export default function TitleScreen(): JSX.Element {
 
 
 
-          {/* <Pagination page={page} setPage={setPage} totalPages={totalPages} last={last} /> */}
+          <Pagination page={page} setPage={setPage} totalPages={totalPages} last={last} />
 
           <Div cond={loading}><Loading /></Div>
 

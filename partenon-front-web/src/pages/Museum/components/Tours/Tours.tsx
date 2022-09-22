@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { Div, Retractable } from "components/wrappers";
+import { Div } from "components/wrappers";
 import { Button, Field, Dropdown, Message, DateTime } from "components/formComponents";
 import {languages} from "utilities/constants";
-import tour from "../../models/tour";
 import postTour from "../../services/postTour";
+import postAppointment from "../../services/postAppointment";
 import "./Tours.css";
 
 
 type props = {
-    tours: tour[],
-    editing: boolean,
-    isAdmin: boolean
+    tours:   string[],
+    editing: boolean
 }
 
 
-export default function Tours({tours, isAdmin, editing}: props) {
+export default function Tours({tours, editing}: props) {
 
     const [success,     setSuccess] =   useState(false);
     const [newTourName, setNewTourName] = useState();
@@ -28,26 +27,7 @@ export default function Tours({tours, isAdmin, editing}: props) {
     return <div  className="tours">
         
         <Div cond={tours?.length>0}>
-            {tours?.map(tour=>
-            
-            <div key={tour.ID} className="tour">
-
-                <Tour name={tour.name} ID={tour.ID} key={tour.ID} />
-            
-                <Div cond={isAdmin}>
-                    <Retractable label="Turnos pedidos">
-                    
-                    <ol>
-                    {tour.appointments?.map((appointment, i)=>
-                    <Div flex className="appointment" key={i}>
-                        <li>{appointment.date}: {appointment.language}</li>
-                    </Div>)}
-                    </ol>
-
-                    </Retractable>
-                </Div>
-
-            </div>)}
+            {tours?.map((tour, i) => <Tour name={tour} key={i} />)}
         </Div>
 
         <Div flex cond={editing} align="flex-end">
@@ -60,17 +40,23 @@ export default function Tours({tours, isAdmin, editing}: props) {
     </div>
 }
 
-function Tour({name, ID}: {name: string, ID: number}): JSX.Element {
+function Tour({name}: {name: string}): JSX.Element {
     
     const [addingNewAppointment, setAddingNewAppointment] = useState(false);
     const [date, setDate] = useState();
     const [language, setLanguage] = useState();
+    const [requestName, setRequestName] = useState();
 
     function saveNewAppointment() {
-        console.log(ID);
+        postAppointment({
+            language: language,
+            date:   date,
+            name: requestName,
+            tour: name
+        })
     }
 
-    return <>
+    return <div className="tour">
 
         <Div flex>
             <h2>{name}</h2>
@@ -83,7 +69,8 @@ function Tour({name, ID}: {name: string, ID: number}): JSX.Element {
         <Div flex cond={addingNewAppointment}>
             <DateTime nonPast value={date} onChange={setDate} />
             <Dropdown options={languages} value={language} onChange={setLanguage} />
+            <Field label="Tu nombre" bind={[requestName, setRequestName]} />
             <Button onClick={()=>saveNewAppointment()}>enviar</Button>
         </Div>
-    </>
+    </div>
 }

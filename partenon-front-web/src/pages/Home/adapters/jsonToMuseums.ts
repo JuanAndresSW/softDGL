@@ -1,8 +1,9 @@
 import {base64ToBlob} from "utilities/conversions";
 import shortMuseum from '../models/shortMuseum';
+import listOfMuseums from "../models/listOfMuseums";
 
 /**Adapta el objeto de lista de museos recibido al formato esperado.*/
-export default async function jsonToMuseums(json: string): Promise<shortMuseum[]> {
+export default async function jsonToMuseums(json: string): Promise<listOfMuseums> {
     const museums = JSON.parse(json);
 
     async function adaptMuseum(m: any): Promise<shortMuseum> {
@@ -14,5 +15,9 @@ export default async function jsonToMuseums(json: string): Promise<shortMuseum[]
         }
     }
 
-    return await Promise.all(museums.map(async (m:any) => await adaptMuseum(m)))
+    return {
+        museums:        await Promise.all(museums.map(async (m:any) => await adaptMuseum(m))),
+        last:           museums.last,
+        totalPages:     museums.totalPages
+    }
 }

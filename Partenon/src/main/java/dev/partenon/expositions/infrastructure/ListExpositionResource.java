@@ -9,6 +9,7 @@ import dev.partenon.global.domain.abstractcomponents.query.QueryBus;
 import dev.partenon.global.domain.model.Page;
 import dev.partenon.global.domain.model.PagedResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class ListExpositionResource {
     }
 
     @GetMapping("/by")
-    public ResponseEntity<PagedResponse<Expositions>> saveBanners(
+    public HttpEntity<PagedResponse<Expositions>> saveBanners(
             @RequestParam(value = "index") int index,
             @RequestParam(value = "size") int size,
             @RequestParam(value = "sort") String sort,

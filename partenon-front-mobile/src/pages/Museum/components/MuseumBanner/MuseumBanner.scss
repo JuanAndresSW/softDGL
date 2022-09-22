@@ -1,0 +1,18 @@
+[data-museum-banner] {
+    min-height: 14rem;
+    padding: 2rem 0 0 2rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    img {
+        background-color: #ccc;
+        border-radius: 15px;
+        height: 12rem;
+        margin-right: 2rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    & label, select {
+        color: white;
+    }
+}

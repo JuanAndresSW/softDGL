@@ -9,4 +9,5 @@ import lombok.Data;
 public class SaveDescriptionCommand extends Command {
     private String description;
     private Long museumId;
+    private Boolean flag;
 }

@@ -5,6 +5,7 @@ import dev.partenon.museumcontext.core.doamin.SaveMuseumAndUserCommand;
 import dev.partenon.user.domain.model.UserRestModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ public class SaveMuseumAndUserResource {
     private CommandBus commandBus;
 
     @PostMapping("/museums")
-    public ResponseEntity<Void> create(@RequestBody @Valid UserRestModel userRestModel) throws Exception {
+    public HttpEntity<Void> create(@RequestBody @Valid UserRestModel userRestModel) throws Exception {
 
         var command = SaveMuseumAndUserCommand.builder()
                 .username(userRestModel.getUsername())

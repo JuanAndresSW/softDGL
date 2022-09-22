@@ -4,6 +4,7 @@ import dev.partenon.global.domain.abstractcomponents.command.CommandBus;
 import dev.partenon.museumcontext.banner.doamin.SaveBannerCommand;
 import dev.partenon.museumcontext.banner.doamin.BannerRestModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,8 @@ public class SaveBannerResource {
 
     @PreAuthorize("isAuthenticated()")
     @PostMapping("/banners")
-    public ResponseEntity<Void> saveBanners(@RequestBody @Valid BannerRestModel banner,
-                                            @RequestParam("key") String museumId) throws Exception{
+    public HttpEntity<Void> saveBanners(@RequestBody @Valid BannerRestModel banner,
+                                        @RequestParam("key") String museumId) throws Exception{
         var command = SaveBannerCommand.builder()
                 .museumBanner(banner.getBanner())
                 .museumId(Long.valueOf(museumId))

@@ -16,6 +16,7 @@ import java.io.Serializable;
 public class MuseumBanner implements Serializable {
     public static final Long serialVersionUID = 1L;
 
+    @JsonIgnore
     @Id
     @Column(name = "museum_banner_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

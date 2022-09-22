@@ -24,7 +24,11 @@ public class SaveDescriptionCommandHandler implements CommandHandler<SaveDescrip
         var museum = museumRepository.findByMuseumId(command.getMuseumId());
         if(museum.isEmpty())
             throw new Exception("ID no registrado");
-
-        descriptionRepository.save(MuseumDescription.create(command, museum.get()));
+        if(museum.get().getMuseumDescription() == null) {
+            descriptionRepository.saveAndFlush(MuseumDescription.create(command, museum.get()));
+        } else {
+            command.setFlag(false);
+            museum.get().getMuseumDescription().setDescription(command.getDescription());
+        }
     }
 }
