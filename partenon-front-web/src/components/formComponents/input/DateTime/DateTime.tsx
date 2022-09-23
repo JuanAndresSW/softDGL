@@ -23,8 +23,7 @@ export default function DateTime({ label = "", type="date", value, onChange, non
     const currentDate = (`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
 
     const change = (value:string) => {
-        if (nonPast && Date.parse(value) < Date.parse(currentDate))
-        return;
+        if (nonPast && Date.parse(value) < Date.parse(currentDate)) return;
         onChange(value);
     }
 

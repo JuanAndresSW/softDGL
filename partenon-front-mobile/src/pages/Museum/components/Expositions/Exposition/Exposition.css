@@ -1,0 +1,14 @@
+.exposition {
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  font-family: monospace;
+  background-color: #eee;
+  color: #333;
+  border-radius: 4px;
+}
+
+.exposition h2 {
+  font-size: 1.4rem;
+  text-align: center;
+}
+/*# sourceMappingURL=Exposition.css.map */

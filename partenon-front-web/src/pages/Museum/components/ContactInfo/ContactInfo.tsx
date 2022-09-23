@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { FlexDiv } from "components/wrappers";
-import { AiFillFacebook, AiFillInstagram, AiOutlineTwitter, AiOutlineWhatsApp } from "react-icons/ai";
-import { Button, Field, Message, Select } from "components/formComponents";
-import { BiPencil, BiX } from "react-icons/bi";
+import { Div } from "components/wrappers";
+import { AiFillFacebook, AiFillInstagram, AiOutlineMail, AiOutlineTwitter, AiOutlineWhatsApp } from "react-icons/ai";
+import { Button, Dropdown, Field, Message } from "components/formComponents";
+import postContact from "../../services/postContact";
+
 
 import "./ContactInfo.css";
+import contact from "pages/Museum/models/contact";
 
 
 const contactTypes = [
+    {value: "EMAIL"},
     {value: "FACEBOOK"},
     {value: "INSTAGRAM"},
     {value: "TWITTER"},
@@ -15,28 +18,22 @@ const contactTypes = [
 ];
 
 type props = {
-    contact: {
-        type: string,
-        value: string
-    }[]
+    contacts: contact[],
+    editing: boolean
 }
 
 
-export default function ContactInfo({contact}: props) {
+export default function ContactInfo({contacts, editing}: props) {
 
     //Contact.
-    const [newContactType, setNewContactType] =     useState();
+    const [newContactType, setNewContactType] =     useState(contactTypes[0].value);
     const [newContactValue, setNewContactValue] =   useState();
-    const [addingContact, setAddingContact] =       useState(false);
-    const [contactError, setContactError] =         useState('');
+    const [success, setSuccess] =         useState(false);
 
-    const notYetAddedContacts = () =>{
-        const addedContacts = contact.map((contact)=> contact.type);
-        return contactTypes.filter((contact)=>addedContacts.indexOf(contact.value) < 0);
-    }
 
     function getContactIcon(type: string) {
         switch (type) {
+            case "EMAIL":       return <AiOutlineMail/>
             case "FACEBOOK":    return <AiFillFacebook/>
             case "INSTAGRAM":   return <AiFillInstagram/>
             case "TWITTER":     return <AiOutlineTwitter/>
@@ -46,37 +43,39 @@ export default function ContactInfo({contact}: props) {
 
     function addContact(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        if (!newContactValue || !newContactType) return setContactError("Complete todos los campos");
-        setContactError("");
-        console.log("Enviando datos de nuevo contacto");
+        if (!newContactValue || !newContactType) return;
+        postContact({type: newContactType, value: newContactValue}).then(response=>{
+            if (response.ok) {
+                setSuccess(true);
+            };
+        })
+
     }
 
 
     return (
         <div className="contact-info">
-            {contact.map((c, index) => (
+            {contacts.map((c, index) => (
                 <div key={index} className="contact-item">
                     {getContactIcon(c.type)}<p>{c.value}</p>
                 </div>
             ))}
 
-            
-            <div style={{position:"absolute", top:8, right:8}}>
-                {addingContact?
-                <BiX onClick={()=>setAddingContact(false)} />:
-                <BiPencil onClick={()=>{if(contact.length<4) setAddingContact(true)}} />}
-            </div>
 
-
-            {!addingContact?null:
-            
+            <Div cond={editing}>
             <form onSubmit={(e)=>addContact(e)}>
-                <FlexDiv align="center">
-                    <Select options={notYetAddedContacts()} value={newContactType} onChange={setNewContactType}/>
+
+                <Div flex align="center">
+                    <Dropdown options={contactTypes} value={newContactType} onChange={setNewContactType}/>
                     <Field bind={[newContactValue, setNewContactValue]} />
-                </FlexDiv>
-                <FlexDiv><Button type="submit">Agregar</Button></FlexDiv>
-            </form>}
+                    <Button type="submit">+ agregar red social</Button>
+                    <Div cond={success}>
+                        <Message type="success" message={"Se ha agregado la red social"} />
+                    </Div>
+                </Div>
+                
+            </form>
+            </Div>
               
         </div>
 

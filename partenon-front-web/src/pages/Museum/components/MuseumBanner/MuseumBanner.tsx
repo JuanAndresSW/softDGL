@@ -1,49 +1,63 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate }                from "react-router-dom";
+import React, { useState } from "react";
 
-import { base64ToBlob }               from "utilities/conversions";
 
-import { Button, Message }            from "components/formComponents";
-import { Confirm }                    from "components/wrappers";
+import { Button, Message, Image, Textarea } from "components/formComponents";
+import { Div } from "components/wrappers";
+import postBanner from "../../services/postBanner";
+import postDescription from "../../services/postDescription";
 import './MuseumBanner.css';
-import testBanner from "assets/svg/default-photo.svg";
-import { BiPencil } from "react-icons/bi";
 
-/**Encabezado con un logo, foto, titulo y dirección del museo. Permite borrar el museo.*/
-export default function MuseumBanner(): JSX.Element {
-    const [banner, setBanner] = useState(testBanner);
-    const [museumName, setMuseumName] = useState("Name");
-    const [province, setProvince] = useState(undefined);
-    const [city, setCity] = useState(undefined);
-    const [street, setStreet] = useState(undefined);
-    const [addressNumber, setAddressNumber] = useState(undefined);
-    const [description, setDescription] = useState("undefined...");
+type props = {
+    museumBasicData: {
+        banner: Blob,
+        name: string,
+        province: string,
+        city: string,
+        street: string,
+        addressNumber: string,
+        description: string
+    },
+    editing: boolean
+}
 
+/**Encabezado con un logo, foto, titulo y dirección del museo.*/
+export default function MuseumBanner({museumBasicData, editing}: props): JSX.Element {
 
-    const [error, setError] = useState("");
+    const [banner, setBanner] =                 useState(museumBasicData.banner);
+    const [description, setDescription] =       useState(museumBasicData.description);
+
+    const [success, setSuccess] = useState(false);
+
+    async function save() {
+        const bannerResponse = await postBanner(banner);
+        const descResponse   = await postDescription(description);
+
+        if (bannerResponse.ok && descResponse.ok) setSuccess(true);
+    }
     
 
-    useEffect(()=>{
-        //base64ToBlob(branch.photo).then(logoAsBlob=>{
-        //setPhoto(URL.createObjectURL(logoAsBlob));
-        //});
-    }, []);
+    return <div data-museum-banner>
 
-    return (
-        <div data-museum-banner>
-          <img src={banner?banner:null} alt="" />
-          <h2>{museumName}</h2>
-          <h3>{province + ' ' + city + ', ' + street + ' ' + addressNumber}</h3>
-  
-          
+        {editing? <>
 
-          <div style={{position:"absolute", top:0, right:0}}>
-          <Button><BiPencil/></Button>
-          </div>
+        <Div flex><Image setter={setBanner} img={banner?.size>666?banner:null} /></Div>
+        <Textarea maxLength={200} label="Descripción" bind={[description, setDescription]} />
+        <Div flex><Button onClick={()=>save()}>Guardar</Button></Div>
+     
+        <Div cond={success}><Message type="success" message="Se han guardado los datos" /></Div>
+        </>
 
-          <p>{description}</p>
-          
-          <Message type="error" message={error} />
-        </div>
-    );
+        :
+        
+        <>
+        <Div flex>
+            <img src={museumBasicData.banner?.size>10? URL.createObjectURL(museumBasicData.banner) : ''} alt="" />
+            <h2>{museumBasicData.name}</h2>
+        </Div>
+
+        <h3>{museumBasicData.province + ' ' + museumBasicData.city + ', ' + museumBasicData.street + ' ' + museumBasicData.addressNumber}</h3>
+        <p>{museumBasicData.description}</p>
+        </>
+        }
+    </div>
 }

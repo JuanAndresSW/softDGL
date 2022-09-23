@@ -1,0 +1,7 @@
+.tour {
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #eee;
+}

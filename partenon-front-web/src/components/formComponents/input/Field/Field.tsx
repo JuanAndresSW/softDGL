@@ -7,7 +7,7 @@ type props = {
     placeholder?:string;
     type?: "text" | "number" | "password" | "email" | "tel" | "url" | string;
     bind: [any, Function];
-    validator?: boolean;
+    validator?: boolean,
 }
 
 /**
@@ -20,7 +20,7 @@ type props = {
  */
 export default function Field({ label = "", note, placeholder, type = "text", bind, validator=true }: props): JSX.Element {
     return (
-        <label style={{marginTop:'1rem'}}> {label}
+        <label style={{marginTop:'.8rem'}}> {label}
         <span> {note}</span>
             <input
                 className={validator?"field":"field invalid"}

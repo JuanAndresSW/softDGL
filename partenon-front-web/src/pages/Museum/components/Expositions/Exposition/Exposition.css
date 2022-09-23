@@ -1,0 +1,55 @@
+.exposition {
+  max-width: 800px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 1rem auto;
+  padding: 0 1rem .2rem;
+  color: #333;
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+.exposition [data-expo-header] {
+  border: 0px solid #444;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: .4rem;
+}
+
+.exposition [data-expo-header] svg {
+  color: #aaa;
+  margin: 0 1rem;
+  font-size: 1.3rem;
+}
+
+.exposition [data-expo-header] h2, .exposition [data-expo-header] h3 {
+  margin: 0;
+}
+
+.exposition [data-expo-header] h2 {
+  font-size: 1.3rem;
+}
+
+.exposition [data-expo-header] h3 {
+  font-size: 1rem;
+  background-color: #3cf13c;
+  padding: .2rem;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  border-radius: 5px;
+}
+
+.exposition [data-expo-body] {
+  width: 98%;
+  margin: 0 auto;
+  padding: .4rem 1rem;
+}
+
+.exposition [data-expo-body] img {
+  width: 250px;
+  border-radius: 10px;
+  margin: 0 .5rem;
+}
+/*# sourceMappingURL=Exposition.css.map */

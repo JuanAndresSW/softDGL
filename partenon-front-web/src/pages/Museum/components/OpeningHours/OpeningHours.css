@@ -1,16 +1,11 @@
-.contact-info {
-    position: relative;
-    max-width: 400px;
-    margin: 0 auto;
+.opening-hours p {
+    background: #ddd;
+    margin: .2rem;
+    font-family: monospace  ;
+    text-align: center;
+    padding: .2rem .4rem;
+    border-radius: 0px;
 }
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
-
-.contact-info .contact-item p {
-    padding: 0 .8rem;
-    display: block;
+.opening-hours {
+    margin: 2rem 0;
 }

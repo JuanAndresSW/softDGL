@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,OAAO,EAAE,UAAU;EACnB,SAAS,EAAE,IAAI;EAEf,WAAW,EAAE,SAAS;EAEtB,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,IAAI;EACX,aAAa,EAAE,GAAG;CAMrB;;AAdD,AAUI,WAVO,CAUP,EAAE,CAAC;EACC,SAAS,EAAE,MAAM;EACjB,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "Exposition.scss"
+    ],
+    "names": [],
+    "file": "Exposition.css"
+}

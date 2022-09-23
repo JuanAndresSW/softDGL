@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Partenon</string>
+    <string name="title_activity_main">Partenon</string>
+    <string name="package_name">front.mobile.partenon</string>
+    <string name="custom_url_scheme">front.mobile.partenon</string>
+</resources>

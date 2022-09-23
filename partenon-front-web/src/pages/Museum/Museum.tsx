@@ -1,99 +1,99 @@
 import React, { SetStateAction, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-
+//Componentes locales.
 import MuseumBanner from "./components/MuseumBanner/MuseumBanner";
 import ContactInfo from "./components/ContactInfo/ContactInfo";
-import { Section, Retractable, FlexDiv } from "components/wrappers";
-import { Button, Field, Form, Message, Select } from "components/formComponents";
+import OpeningHours from "./components/OpeningHours/OpeningHours";
+import Expositions from "./components/Expositions/Expositions";
+import Plan from "./components/Plan/Plan";
+import Tours from "./components/Tours/Tours";
+import Appointments from "./components/Appointments/Appointments";
 
+
+//Componentes globales.
+import { Section, Retractable, Div } from "components/wrappers";
+import { Button } from "components/formComponents";
+import { BackArrow, Loading } from "components/standalone";
+import { BiLogOut, BiPencil, BiRefresh, BiX } from "react-icons/bi";
+
+//Otros.
 import getMuseum from "./services/getMuseum";
+import closeSession from "services/closeSession";
 import museum from "./models/museum";
-import { Plus } from "components/standalone";
-import { BiPlus } from "react-icons/bi";
+import { museumID } from "utilities/constants";
 
-
-
-
-const placeholderMuseum = {
-    museumName: "placeholderName",
-    province: "province",
-    city: "city",
-    street: "street",
-    addressNumber: "number",
-    description: "descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription",
-    banner: "new File(undefined, undefined)",
-    plan: "new File(undefined, undefined)",
-
-    contact: [{
-        type: "TWITTER",
-        value: "@museum"
-    },
+const testTours = [
     {
-        type: "FACEBOOK",
-        value: "@museum"
+        ID: 1,
+        name: "name",
+        appointments: [{
+            language: "lang",
+            date: "date"
+        }]
     }
-    ],
+]
 
-    openingHours: {
-        monday: "",
-        tuesday: "8 a 12 y 2 a 6",
-        wednesday: "8 a 12 y 2 a 6",
-        thursday: "8 a 12 y 2 a 6",
-        friday: "8 a 12 y 2 a 6",
-        saturday: "8 a 12 y 2 a 6",
-        sunday: "8 a 12 y 2 a 6"
-    },
+export default function Museum({hasEditingPermissions=false}): JSX.Element {
 
-    expositions: [{
-        name: "testExpo",
-        category: "categ",
-        photo: "new File(undefined, undefined)",
-        description: "description"
-    }]
-}
+    const {id} = useParams();
+    const ID = hasEditingPermissions ? museumID : parseInt(id);
+    useEffect(requestMuseum, [ID]);
 
-
-
-/**Application's global component.*/
-export default function Museum(): JSX.Element {
-
-    const {IDUser} = useParams();
-    const [museum, setMuseum]: [any, React.Dispatch<SetStateAction<any>>] = useState(placeholderMuseum);
-
-
-    
-
-    useEffect(requestMuseum, [IDUser]);
+    const [museum, setMuseum]: [museum, React.Dispatch<SetStateAction<museum>>] = useState(null);
+    const [editing, setEditing] = useState(false);
 
     function requestMuseum() {
-        if (!IDUser) return;
-        getMuseum(parseInt(IDUser)).then(response=>{
+        if (Number.isInteger(ID))
+        getMuseum(ID).then(response=>{
             if (response.ok) setMuseum(response.content);
-        })
+        });
     }
 
-    return <>
-        <MuseumBanner/>
-      
+ 
+    return museum===null? <Loading/> : <>
+
+        <Div flex cond={hasEditingPermissions} justify="flex-end" style={{width:"max-content", position:"absolute", top:0, right:0}}>
+
+            <Button title="cerrar sesión" type={'delete'} onClick={()=>closeSession()}><BiLogOut/></Button>
+
+            <Button title="editar" type={editing?'delete':'button'} onClick={()=>setEditing(!editing)}>
+            {editing?<BiX/>:<BiPencil/>}
+            </Button>
+
+        </Div>
+
+        <BiRefresh style={{position:"absolute", top:70, right:20, color:'#fff', fontSize:'2rem'}} title='refrescar' onClick={()=>requestMuseum()} />
+        <BackArrow/>
+        <MuseumBanner museumBasicData={museum.basicData}   editing={editing}/>
+
         <Section>
 
-            <div style={{maxWidth: "700px", margin:"0 auto"}}>
+            <Div flex>
+                <ContactInfo    contacts={museum.contacts}           editing={editing} />
+                <OpeningHours   openingHours={museum.openingHours}   editing={editing} />
+                <Plan           plan={museum.plan}                   editing={editing} />
+            </Div>   
 
-            <ContactInfo contact={placeholderMuseum.contact} />
+            <Div cond={museum.expositions.length>0||editing}>
+                <Retractable     label="Exposiciones">
+                    <Expositions expositions={museum.expositions}     editing={editing} />
+                </Retractable>
+            </Div>
+
+
+            <Div cond={museum.tours?.length>0||editing}>
+                <Retractable     label="Recorridos">
+                    <Tours tours={museum.tours} editing={editing} />
+                </Retractable>
+            </Div>
+
+
+            <Div cond={hasEditingPermissions}>
+                <Appointments appointments={museum.appointments} />
+            </Div>
 
             
-
-
-            </div>
-
         </Section>
-            
-        
-        
-    
-    </>
-        
+    </>    
 }
-
-

@@ -1,0 +1,31 @@
+[data-pagination] {
+    padding: 0;
+    background-color: #ccc;
+    border-radius: 9px;
+    overflow: hidden;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #000;
+    margin: 1rem auto;
+}
+
+[data-pagination] svg {
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+[data-pagination] svg.unactive {
+    background-color: #bbb;
+    cursor: default;
+}
+
+[data-pagination] div {
+    font-family: monospace;
+    padding: 0 3rem;
+    margin: 0;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: default;
+}

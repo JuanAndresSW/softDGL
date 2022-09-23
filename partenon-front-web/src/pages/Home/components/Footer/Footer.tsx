@@ -9,19 +9,17 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer>
+
       <div>
         <p>© Conjunto Solución 2022 (GNU V.3)</p>
-        <Link to={"/about"}>Acerca de</Link>
+        <a href={"https://drive.google.com/drive/folders/1nexO74ZrMk5pNZ20Li5164A2XCm_xQSh?usp=sharing"}>Acerca de</a>
       </div>
+
       <div>
-        <a
-          href="https://github.com/conjunto-solucion/partenon"
-          className="github"
-        >
-          <DiGithubBadge />
-        </a>
-        <p>Partenón versión 0.1.0</p>
+        <a href="https://github.com/conjunto-solucion/partenon" className="github"><DiGithubBadge /></a>
+        <p>Partenón versión demo</p>
       </div>
+      
     </footer>
   );
 }

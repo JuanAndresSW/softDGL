@@ -1,33 +1,24 @@
+import openingHours from './openingHours';
+import contact from "./contact";
+import exposition from "./exposition";
+import appointment from "./appointment";
+
 type museum = {
-    museumName: string,
-    province: string,
-    city: string,
-    street: string,
-    addressNumber: string,
-    description: string,
-    banner: File,
-    plan: File,
-
-    contact: {
-        type: string,
-        value: string
-    }[],
-
-    openingHours: {
-        monday: string,
-        tuesday: string,
-        wednesday: string,
-        thursday: string,
-        friday: string,
-        sunday: string,
-    },
-
-    expositions: {
+    basicData: {
         name: string,
-        category: string,
-        photo: File,
-        description: string
-    }[]
+        province: string,
+        city: string,
+        street: string,
+        addressNumber: string,
+        description: string,
+        banner: Blob,
+    },
+    plan: Blob,
+    contacts: contact[],
+    openingHours: openingHours,
+    expositions: exposition[],
+    tours: string[],
+    appointments: appointment[]
 
 }
 export default museum;

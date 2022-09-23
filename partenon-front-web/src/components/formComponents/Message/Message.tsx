@@ -1,6 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "../Button/Button";
 import './Message.css';
 
 type props = {
@@ -14,7 +12,6 @@ type props = {
  * @param props.message - String a mostrar como mensaje.
  */
 export default function Message({type, message}:props): JSX.Element {
-    const navigate = useNavigate();
     return (
         type==="error"?
         <p className="error">
@@ -22,8 +19,7 @@ export default function Message({type, message}:props): JSX.Element {
             {message}
         </p>:
         <div className="success">
-            <p>💾 {message}</p>
-            <Button onClick={() => navigate(-1)}>Regresar</Button>
+            💾 {message}
         </div>
         
     );

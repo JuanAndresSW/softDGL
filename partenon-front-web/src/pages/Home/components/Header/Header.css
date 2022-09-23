@@ -1,5 +1,4 @@
 header {
-  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,13 +6,12 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid gainsboro;
 }
 
 header #logo {
@@ -24,20 +22,14 @@ header #logo {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-family: monospace;
 }
 
-header #logo img {
-  margin: 0 1rem 0 0.6rem;
-  width: 3rem;
-  height: 3rem;
-}
-
-header #logged-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+header #logo svg {
+  display: block;
+  font-size: 2rem;
+  margin: 0 .7rem;
 }
 
 header #header-links {
@@ -56,7 +48,7 @@ header #header-links {
 header #header-links a {
   text-decoration: none;
   margin: 1rem;
-  color: blue;
+  color: white;
 }
 
 header #header-links button {
@@ -72,22 +64,5 @@ header #header-links button {
 header #header-links button a {
   margin: 0;
   color: white;
-}
-
-@media (max-width: 750px) {
-  #logged-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-
-@media (max-width: 600px) {
-  #logo * {
-    display: none;
-  }
 }
 /*# sourceMappingURL=Header.css.map */

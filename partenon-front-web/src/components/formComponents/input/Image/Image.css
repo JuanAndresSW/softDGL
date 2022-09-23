@@ -1,6 +1,5 @@
 .image {
-    width: max-content;
-    margin: 1rem auto;
+    width: min-content;
     cursor: pointer;
     position: relative;
 }
@@ -10,9 +9,8 @@
 
 .image div {
     width: 10rem;
-    height: 10rem;
     margin: .5rem auto;
-    border-radius: 50%;
+    border-radius: 10px;
     border: 1px solid transparent;
     overflow: hidden;
 }
@@ -35,7 +33,7 @@
     right: .1rem;
 }
 .image:hover {
-    background-color: #eee;
+    background-color: #55f;
 }
 .image svg:hover {
     color: #f44;

@@ -1,4 +1,4 @@
-export const IDTrader = parseInt(sessionStorage.getItem("IDTrader"));
+export const museumID = Number.parseInt(sessionStorage.getItem("museumID").replace(/\"/g, ''));
 
 /**Lista de provincias de argentina, en orden alfabético. Ciudad de Buenos Aires no incluida. */
 export const provinces = [
@@ -25,4 +25,12 @@ export const provinces = [
     {value: "Santiago del Estero"},
     {value: "Tierra del Fuego"},
     {value: "Tucumán"}
+];
+
+//Idiomas permitidos por el item de pedido de turnos para recorridos.
+export const languages = [
+    {value: "Español"},
+    {value: "Inglés"},
+    {value: "Portugués"},
+    {value: "Guaraní"}
 ];

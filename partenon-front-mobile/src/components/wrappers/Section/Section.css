@@ -1,0 +1,14 @@
+.section {
+    background: rgb(255,255,255);
+    padding: 1rem;
+    margin: 0;
+    min-height: 80vh;
+}
+
+.section legend:nth-child(1) {
+    margin: .4rem;
+    text-align: center;
+    color: #222;
+    font-size: 1rem;
+    font-family: monospace;
+}
