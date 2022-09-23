@@ -1,0 +1,44 @@
+.title-wrapper {
+  display: block;
+  min-height: 70vh;
+  margin: 2rem auto 0;
+  text-align: center;
+  font-family: monospace;
+  color: white;
+}
+
+.title-wrapper h1 {
+  font-size: 4vw;
+}
+
+.title-wrapper form {
+  min-height: 80vh;
+}
+
+.title-wrapper form label {
+  color: #444;
+}
+
+.title-wrapper form input {
+  display: block;
+  margin: 5px auto;
+  border: none;
+  width: 20rem;
+  padding: .5rem .8rem;
+}
+
+.title-wrapper form input:focus {
+  outline: none;
+  border-bottom: 2px solid #999;
+}
+
+.title-wrapper form .list-of-museums {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.title-wrapper form img {
+  width: 200px;
+}
+/*# sourceMappingURL=TitleScreen.css.map */

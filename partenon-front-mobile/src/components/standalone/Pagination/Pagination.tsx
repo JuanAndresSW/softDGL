@@ -13,15 +13,16 @@ export default function Pagination({page,setPage, totalPages, last}:props): JSX.
     return (
         <menu data-pagination>
 
-            <BiCaretLeft 
-            onMouseDown={ page===0 ? null : ()=>setPage(page--) }
-            className=  { page===0 ? "unactive" : null}/>
+            <button title="página anterior" onClick={ ()=>{ if (page===0) return; setPage(page-1)} }>
+            <BiCaretLeft className=  { page===0 ? "unactive" : null}/>
+            </button>
 
             <div><p>{page+1}/{totalPages}</p></div>
 
-            <BiCaretRight
-            onMouseDown={last?null:()=>setPage(page++)}
-            className={last?"unactive":null}/>
+            <button title="página siguiente" onClick={()=>{ if (last) return; setPage(page+1)}}>
+            <BiCaretRight className={last?"unactive":null}/>
+            </button>
+
         </menu>
     );
 }

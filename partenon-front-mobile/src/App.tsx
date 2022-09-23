@@ -2,8 +2,8 @@ import React, { Suspense, lazy } from "react";
 import {SplashScreen} from 'components/standalone';
 import { Route, Routes } from "react-router-dom";
 
-const Home =    lazy(() => import('pages/Home/Home'));
-const Museum =  lazy(() => import('pages/Museum/Museum'));
+const Home =    lazy(() => import('views/Home/Home'));
+const Museum =  lazy(() => import('views/Museum/Museum'));
 
 /**Application's global component.*/
 export default function App(): JSX.Element {
