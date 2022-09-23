@@ -13,19 +13,6 @@ Ejecuta el entorno de pruebas
 
 Transpila, minifica y hace tree shaking a todo el proyecto para la versión de lanzamiento
 
-## Notas:
+### `npx cap add [android||ios]`
 
-### SCSS:
-
-Muchos componentes utilizan SCSS. Para transformarlo a CSS, se recomienda la extensión 'live sass compiler en VSC'.
-
-### Archivos especiales:
-
-1. package.json: declaración de dependencias
-3. tsconfig.json: configuración del comportamiento de typescript
-5. global.d.ts: exporta declaraciones especiales que permiten importar archivos .jpg, .png, .svg..
-
-### Directorios:
-* **node_modules**: módulos de react. Para generar automáticamente a partir de las dependecias especificadas: npm install
-* **public**: carpeta principal accesible por el servidor
-* **src**: todos los recursos que serán empaquetados por Webpack.
+Ejecuta el plugin Capacitor para crear una adaptación a partir del build del proyecto

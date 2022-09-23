@@ -3,11 +3,10 @@ import { Loading, Pagination } from "components/standalone";
 import MuseumItem from "../MuseumItem/MuseumItem";
 import React, { useState } from "react";
 import shortMuseum from "../../models/shortMuseum";
+import listOfMuseums from "../../models/listOfMuseums";
 import "./TitleScreen.css";
 import parthenon from "assets/parthenon.jpg";
 import getMuseums from "../../services/getMuseums";
-//import listOfMuseums from "pages/Home/models/listOfMuseums";
-
 
 
 export default function TitleScreen(): JSX.Element {
@@ -24,10 +23,13 @@ export default function TitleScreen(): JSX.Element {
   function search() {
     setLoading(true);
 
-    getMuseums(q).then(response=>{
-
+    getMuseums(q, page).then(response=>{
       if (!response?.ok) return;
-      setMuseums    (response.content);
+      const listOfMuseums: listOfMuseums = response.content;
+
+      setMuseums    (listOfMuseums.museums);
+      setTotalPages (listOfMuseums.totalPages);
+      setLast       (listOfMuseums.last);
       setLoading    (false);
     });
   }
@@ -46,18 +48,15 @@ export default function TitleScreen(): JSX.Element {
 
           <Div cond={loading}><Loading /></Div>
 
-          {(museums?.length > 0)? 
+          {museums?.length > 0 ? 
 
             <Div flex className="list-of-museums">
-
-            {museums.map((museum)=> <MuseumItem  museum={museum} key={museum.ID.toString()} />)}
-
+            {museums.map(museum => <MuseumItem  museum={museum} key={museum.ID} />)}
             </Div>
 
             :
 
             <img src={parthenon} alt="" />
-        
           }
 
         </form>

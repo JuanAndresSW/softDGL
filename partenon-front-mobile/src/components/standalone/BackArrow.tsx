@@ -4,7 +4,5 @@ import { useNavigate } from "react-router-dom";
 
 export default function BackArrow() {
     const navigate = useNavigate();
-    return (
-        <BiChevronLeft onClick={() => navigate(-1)} style={{fontSize:"2rem", color:"white",cursor:"pointer"}} />
-    );
+    return <BiChevronLeft title="atrás" onClick={() => navigate(-1)} style={{fontSize:"2rem", color:"white",cursor:"pointer"}} />
 }
