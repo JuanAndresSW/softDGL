@@ -4,6 +4,6 @@ import './Loading.css';
 
 /**Ícono giratorio de carga. */
 const Loading: React.FC = () => {
-    return <IoIosAperture className="loading" />
+    return <p><IoIosAperture title='cargando...' className="loading" /></p>
 }
 export default Loading;

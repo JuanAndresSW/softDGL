@@ -1,0 +1,25 @@
+[data-museum-item] {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 10rem;
+  margin: 0;
+  color: #222;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+[data-museum-item] div {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  background-color: #eee;
+}
+
+[data-museum-item] h2, [data-museum-item] p {
+  margin: .2rem .4rem;
+}
+
+[data-museum-item] h2 {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=MuseumItem.css.map */

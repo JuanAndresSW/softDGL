@@ -20,7 +20,7 @@
       "components/*":["./components/*"],
       "ports/*":["./ports/*"],
       "models/*":["./models/*"],
-      "pages/*":["./pages/*"],
+      "views/*":["./views/*"],
       "services/*":["./services/*"]
     }
   }
