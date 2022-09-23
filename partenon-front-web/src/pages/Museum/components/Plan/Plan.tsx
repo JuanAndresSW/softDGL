@@ -19,5 +19,5 @@ export default function Plan({plan, editing}: props): JSX.Element {
         <Image setter={setNewPlan} img={newPlan} />
         <Button onClick={()=>saveMuseumPlan()}>Guardar plano</Button>
     </Div>:
-    <img src={newPlan?URL.createObjectURL(newPlan): ''} alt="" />
+    <img src={newPlan?URL.createObjectURL(newPlan): ''} style={{width:"500px", margin: '2rem'}} alt="" />
 }

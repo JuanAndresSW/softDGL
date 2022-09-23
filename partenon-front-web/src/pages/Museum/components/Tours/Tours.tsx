@@ -43,9 +43,11 @@ export default function Tours({tours, editing}: props) {
 function Tour({name}: {name: string}): JSX.Element {
     
     const [addingNewAppointment, setAddingNewAppointment] = useState(false);
-    const [date, setDate] = useState();
-    const [language, setLanguage] = useState();
+    const [date, setDate] = useState('');
+    const [language, setLanguage] = useState("Español");
     const [requestName, setRequestName] = useState();
+
+    const [success, setSuccess] = useState(false);
 
     function saveNewAppointment() {
         postAppointment({
@@ -53,7 +55,7 @@ function Tour({name}: {name: string}): JSX.Element {
             date:   date,
             name: requestName,
             tour: name
-        })
+        }).then(response=>setSuccess(response.ok))
     }
 
     return <div className="tour">
@@ -67,10 +69,14 @@ function Tour({name}: {name: string}): JSX.Element {
         
 
         <Div flex cond={addingNewAppointment}>
-            <DateTime nonPast value={date} onChange={setDate} />
+            <DateTime value={date} onChange={setDate} />
             <Dropdown options={languages} value={language} onChange={setLanguage} />
             <Field label="Tu nombre" bind={[requestName, setRequestName]} />
             <Button onClick={()=>saveNewAppointment()}>enviar</Button>
+            
+            <Div cond={success}>
+            <Message type="success" message="Se ha registrado tu turno" />
+            </Div>
         </Div>
     </div>
 }

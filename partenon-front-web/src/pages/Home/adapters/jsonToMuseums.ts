@@ -16,7 +16,7 @@ export default async function jsonToMuseums(json: string): Promise<listOfMuseums
     }
 
     return {
-        museums:        await Promise.all(museums.map(async (m:any) => await adaptMuseum(m))),
+        museums:        await Promise.all(museums.content.map(async (m:any) => await adaptMuseum(m))),
         last:           museums.last,
         totalPages:     museums.totalPages
     }

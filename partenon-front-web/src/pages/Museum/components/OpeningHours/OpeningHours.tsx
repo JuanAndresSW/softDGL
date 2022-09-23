@@ -56,14 +56,14 @@ export default function OpeningHours({openingHours, editing}: props) {
 
             :
 
-            <Div flex cond={!!openingHours}>
-                <Hours day="Lunes"      hours={openingHours.monday}/>
-                <Hours day="Martes"     hours={openingHours.tuesday}/>
-                <Hours day="Miércoles"  hours={openingHours.wednesday}/>
-                <Hours day="Jueves"     hours={openingHours.thursday}/>
-                <Hours day="Viernes"    hours={openingHours.friday}/>
-                <Hours day="Sábado"     hours={openingHours.saturday}/>
-                <Hours day="Domingo"    hours={openingHours.sunday}/>
+            <Div flex cond={openingHours !== null}>
+                <Hours day="Lunes"      hours={openingHours?.monday}/>
+                <Hours day="Martes"     hours={openingHours?.tuesday}/>
+                <Hours day="Miércoles"  hours={openingHours?.wednesday}/>
+                <Hours day="Jueves"     hours={openingHours?.thursday}/>
+                <Hours day="Viernes"    hours={openingHours?.friday}/>
+                <Hours day="Sábado"     hours={openingHours?.saturday}/>
+                <Hours day="Domingo"    hours={openingHours?.sunday}/>
             </Div>
             }
             

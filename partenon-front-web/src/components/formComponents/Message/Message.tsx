@@ -19,7 +19,7 @@ export default function Message({type, message}:props): JSX.Element {
             {message}
         </p>:
         <div className="success">
-            <p>💾 {message}</p>
+            💾 {message}
         </div>
         
     );

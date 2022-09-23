@@ -14,14 +14,14 @@ export default async function jsonToMuseum(json: string): Promise<museum> {
             city:           museum.city,
             street:         museum.street,
             addressNumber:  museum.addressNumber,
-            description:    museum.museumDescription.description,
+            description:    museum.museumDescription?.description,
             banner: await base64ToBlob(museum.museumBanner?.banner),
         },
 
         plan: museum.museumPlan === null ? null : await base64ToBlob(museum.museumPlan?.buildingPlan),
     
         contacts: museum.museumContacts.map((contact:any): contact => { return {
-            type: contact.contactPK.type, value: contact.museumContact
+            type: contact.contactPK.type === "WSP" ? "WHATSAPP" : contact.contactPK.type, value: contact.museumContact
         }}),
 
         openingHours: museum.openingHours,

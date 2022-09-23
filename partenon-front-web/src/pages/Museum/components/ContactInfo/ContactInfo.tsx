@@ -26,14 +26,10 @@ type props = {
 export default function ContactInfo({contacts, editing}: props) {
 
     //Contact.
-    const [newContactType, setNewContactType] =     useState(notYetAddedContacts()?.[0].value);
+    const [newContactType, setNewContactType] =     useState(contactTypes[0].value);
     const [newContactValue, setNewContactValue] =   useState();
     const [success, setSuccess] =         useState(false);
 
-    function notYetAddedContacts() {
-        const addedContacts = contacts.map((contact)=> contact.type);
-        return contactTypes.filter((contact)=>addedContacts.indexOf(contact.value) < 0);
-    }
 
     function getContactIcon(type: string) {
         switch (type) {
@@ -51,8 +47,6 @@ export default function ContactInfo({contacts, editing}: props) {
         postContact({type: newContactType, value: newContactValue}).then(response=>{
             if (response.ok) {
                 setSuccess(true);
-                setNewContactValue(undefined);
-                setNewContactType(undefined);
             };
         })
 
@@ -72,7 +66,7 @@ export default function ContactInfo({contacts, editing}: props) {
             <form onSubmit={(e)=>addContact(e)}>
 
                 <Div flex align="center">
-                    <Dropdown options={notYetAddedContacts()} value={newContactType} onChange={setNewContactType}/>
+                    <Dropdown options={contactTypes} value={newContactType} onChange={setNewContactType}/>
                     <Field bind={[newContactValue, setNewContactValue]} />
                     <Button type="submit">+ agregar red social</Button>
                     <Div cond={success}>

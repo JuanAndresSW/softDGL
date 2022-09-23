@@ -26,11 +26,13 @@ export default function MuseumBanner({museumBasicData, editing}: props): JSX.Ele
     const [banner, setBanner] =                 useState(museumBasicData.banner);
     const [description, setDescription] =       useState(museumBasicData.description);
 
-    const [error, setError] = useState("");
+    const [success, setSuccess] = useState(false);
 
-    function save() {
-        postBanner(banner);
-        postDescription(description);
+    async function save() {
+        const bannerResponse = await postBanner(banner);
+        const descResponse   = await postDescription(description);
+
+        if (bannerResponse.ok && descResponse.ok) setSuccess(true);
     }
     
 
@@ -38,18 +40,18 @@ export default function MuseumBanner({museumBasicData, editing}: props): JSX.Ele
 
         {editing? <>
 
-        <Div flex><Image setter={setBanner} img={banner} /></Div>
+        <Div flex><Image setter={setBanner} img={banner?.size>666?banner:null} /></Div>
         <Textarea maxLength={200} label="Descripción" bind={[description, setDescription]} />
         <Div flex><Button onClick={()=>save()}>Guardar</Button></Div>
      
-        <Message type="error" message={error} />
+        <Div cond={success}><Message type="success" message="Se han guardado los datos" /></Div>
         </>
 
         :
         
         <>
         <Div flex>
-            <img src={URL.createObjectURL(museumBasicData.banner)} alt="" />
+            <img src={museumBasicData.banner?.size>10? URL.createObjectURL(museumBasicData.banner) : ''} alt="" />
             <h2>{museumBasicData.name}</h2>
         </Div>
 

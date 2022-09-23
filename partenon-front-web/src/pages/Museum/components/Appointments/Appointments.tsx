@@ -10,8 +10,9 @@ export default function Appointments({appointments}: props): JSX.Element {
 
     return (
         
+        <Div cond={appointments?.length>0}>
         <Retractable label="Turnos pedidos">
-                
+            
             <ol className="appointments">
                 {appointments?.map((appointment, i)=>
                 <Div flex className="appointment" key={i}>
@@ -20,6 +21,6 @@ export default function Appointments({appointments}: props): JSX.Element {
             </ol>
 
         </Retractable>
-    
+        </Div>
     )
 }

@@ -31,7 +31,13 @@ export default function Expositions({expositions, editing}: props) {
             description: description
         })
         .then(response=>{
-            if (response.ok) setSuccess(true);
+            if (response.ok) {
+                setPhoto(null);
+                setSuccess(true);
+                setName(null);
+                setCategory(null);
+                setDescription(null);
+            }
         })
     }
 
@@ -51,11 +57,10 @@ export default function Expositions({expositions, editing}: props) {
             <div>
             <Textarea label="descripción" maxLength={100} bind={[description, setDescription]}/>
             <Button onClick={()=>saveNewExpo()}>+ nueva exposición</Button>
-            
+            </div>
             <Div cond={success}>
             <Message type="success" message="Se ha agregado una nueva exposición" />
             </Div>
-            </div>
             
         </Div>
     </div>
