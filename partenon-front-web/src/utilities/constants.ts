@@ -1,4 +1,4 @@
-export const museumID = Number.parseInt(sessionStorage.getItem("museumID").replace(/\"/g, ''));
+export const museumID = Number.parseInt(sessionStorage.getItem("museumID")?.replace(/\"/g, ''));
 
 /**Lista de provincias de argentina, en orden alfabético. Ciudad de Buenos Aires no incluida. */
 export const provinces = [

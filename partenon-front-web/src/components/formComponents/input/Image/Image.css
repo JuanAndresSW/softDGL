@@ -8,8 +8,8 @@
 }
 
 .image div {
-    width: 10rem;
-    margin: .5rem auto;
+    width: 15rem;
+    margin: .2rem auto;
     border-radius: 10px;
     border: 1px solid transparent;
     overflow: hidden;
@@ -29,8 +29,8 @@
     color: #aaa;
     font-size: 1.2rem;
     position: absolute;
-    bottom: 8.2rem;
-    right: .1rem;
+    top: 0;
+    right: 0;
 }
 .image:hover {
     background-color: #55f;

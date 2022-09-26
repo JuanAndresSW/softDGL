@@ -2,7 +2,9 @@ import museum from '../models/museum';
 import {base64ToBlob} from "utilities/conversions";
 import exposition from '../models/exposition';
 import contact from '../models/contact';
+import tour from '../models/tour';
 import appointment from '../models/appointment';
+import piece from '../models/piece';
 
 /**Adapta el objeto de museo recibido al formato esperado.*/
 export default async function jsonToMuseum(json: string): Promise<museum> {
@@ -26,21 +28,31 @@ export default async function jsonToMuseum(json: string): Promise<museum> {
 
         openingHours: museum.openingHours,
 
-        expositions: await Promise.all(museum.expositions.map(async (exposition: any): Promise<exposition> => { return {
+        expositions: await Promise.all(museum.expositions?.map(async (exposition: any): Promise<exposition> => { return {
             ID:             exposition.expositionId,
             name:           exposition.expositionName,
             category:       exposition.category,
-            photo:          await base64ToBlob(exposition.photo),
-            description:    exposition.description
+            description:    exposition.description,
+            startDate:      exposition.startDate? exposition.startDate : '',
+            endDate:        exposition.endDate? exposition.endDate : '',
+            pieces:         exposition.pieces?.map( async (piece: any): Promise<piece> => { return {
+                ID:         piece.ID,
+                name:       piece.name,
+                photo:      await base64ToBlob(piece?.photo),
+                description: piece.description
+            }})
         }})),
 
-        tours: museum.tours?.map((tour: any)=>tour.tourPK.tourName),
+        tours: museum.tours?.map( (tour: any): tour => { return {
+           name:        tour.name,
+           description: tour.description,
+           duration:    tour.duration 
+        }}),
 
         appointments: museum.appointments.map((appointment: any):appointment => { return {
             language:   appointment.language,
             date:       appointment.appointmentDate,
-            name:       appointment.requestedName,
-            tour:       appointment.selectedTour
+            email:      appointment.requestedName
         }})
     }
 }

@@ -49,15 +49,15 @@ export default function MuseumBanner({museumBasicData, editing}: props): JSX.Ele
 
         :
         
-        <>
-        <Div flex>
-            <img src={museumBasicData.banner?.size>10? URL.createObjectURL(museumBasicData.banner) : ''} alt="" />
-            <h2>{museumBasicData.name}</h2>
-        </Div>
+        <Div flex justify="flex-start">
 
-        <h3>{museumBasicData.province + ' ' + museumBasicData.city + ', ' + museumBasicData.street + ' ' + museumBasicData.addressNumber}</h3>
-        <p>{museumBasicData.description}</p>
-        </>
+           
+            <p>{museumBasicData.description}</p>
+          
+
+            <img src={museumBasicData.banner?.size>10? URL.createObjectURL(museumBasicData.banner) : ''} alt="" />
+     
+        </Div>
         }
     </div>
 }

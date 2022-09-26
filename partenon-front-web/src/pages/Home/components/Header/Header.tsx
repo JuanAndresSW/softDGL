@@ -20,7 +20,7 @@ return (
     :
 
     <div id="header-links">
-      <button type="button"><Link to={"/registrarse"}>nuevo museo</Link></button>
+      <button type="button"><Link to={"/registrarse"}>+ nuevo museo</Link></button>
 
       <Link to={"/ingresar"}>Ingresar</Link>
       <a href="about:blank" target="_blank">Aplicación móvil</a>

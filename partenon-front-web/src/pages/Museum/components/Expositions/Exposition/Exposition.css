@@ -1,8 +1,6 @@
 .exposition {
   max-width: 800px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 100%;
   margin: 1rem auto;
   padding: 0 1rem .2rem;
   color: #333;

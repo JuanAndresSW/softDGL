@@ -2,7 +2,6 @@ import Response from 'models/Response';
 import ajax from 'ports/ajax';
 import getToken from "services/getToken";
 import {museumID} from "utilities/constants";
-import {fileToBase64} from "utilities/conversions";
 import exposition from '../models/exposition';
 
 
@@ -12,7 +11,6 @@ export default async function postExposition(exposition: exposition): Promise<Re
     JSON.stringify({
         name: exposition.name,
         description:    exposition.description,
-        photo:          await fileToBase64(exposition.photo),
         category:       exposition.category
     })
     });

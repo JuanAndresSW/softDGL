@@ -22,7 +22,6 @@ header #logo {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: #fff;
   font-family: monospace;
 }
 
@@ -33,7 +32,7 @@ header #logo svg {
 }
 
 header #header-links {
-  font-family: 'nunito', monospace;
+  font-family: monospace;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,7 +47,6 @@ header #header-links {
 header #header-links a {
   text-decoration: none;
   margin: 1rem;
-  color: white;
 }
 
 header #header-links button {

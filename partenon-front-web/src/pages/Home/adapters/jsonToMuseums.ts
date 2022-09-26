@@ -9,9 +9,9 @@ export default async function jsonToMuseums(json: string): Promise<listOfMuseums
     async function adaptMuseum(m: any): Promise<shortMuseum> {
         return {
             ID:             Number.parseInt(m.museumId),
-            name:           m.museumName,
-            banner:         m.museumBanner?.banner? await base64ToBlob(m.museumBanner.banner) : null,
-            description:    m.museumDescription?.description
+            name:           m.name,
+            banner:         m.banner? await base64ToBlob(m.banner) : null,
+            description:    m.description
         }
     }
 

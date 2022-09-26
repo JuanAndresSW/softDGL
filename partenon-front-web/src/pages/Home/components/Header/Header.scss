@@ -7,7 +7,6 @@ header {
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: #fff;
         font-family: monospace;
         svg {
             display: block;
@@ -17,7 +16,7 @@ header {
     }
 
     #header-links{
-        font-family: 'nunito', monospace;
+        font-family: monospace;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -25,7 +24,6 @@ header {
         a {
             text-decoration: none;
             margin: 1rem;
-            color: white;
         }
         button {
             float: right;
@@ -38,7 +36,7 @@ header {
             a {
                 margin: 0;
                 color: white;
-            }
+            }   
         }
     }
 }

@@ -2,6 +2,7 @@ import openingHours from './openingHours';
 import contact from "./contact";
 import exposition from "./exposition";
 import appointment from "./appointment";
+import tour from "./tour";
 
 type museum = {
     basicData: {
@@ -17,7 +18,7 @@ type museum = {
     contacts: contact[],
     openingHours: openingHours,
     expositions: exposition[],
-    tours: string[],
+    tours: tour[],
     appointments: appointment[]
 
 }

@@ -5,7 +5,7 @@
 
 [data-pagination] {
     padding: 0;
-    background-color: #ccc;
+    background-color: #eee;
     border-radius: 999px;
     overflow: hidden;
     width: max-content;
@@ -20,11 +20,9 @@
     cursor: pointer;
 }
 [data-pagination] svg.unactive {
-    background-color: #bbb;
+    color: transparent;
+    background-color: none;
     cursor: default;
-}
-[data-pagination] svg:hover {
-    background-color: #bbb;
 }
 
 

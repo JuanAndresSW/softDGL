@@ -2,13 +2,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 500px;
   height: 10rem;
   margin: 1rem;
+  overflow: hidden;
+  border: 1px solid #ddd;
   border-radius: 10px;
   text-decoration: none;
 }
@@ -18,22 +19,28 @@
   outline: 1px solid #0070f0;
 }
 
-[data-museum-item] img {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 10px;
+[data-museum-item] div {
   overflow: hidden;
+}
+
+[data-museum-item] img {
+  display: block;
+  height: 160px;
+  width: auto;
+  border-right: 1px solid #ddd;
 }
 
 [data-museum-item] h2, [data-museum-item] p {
+  text-align: start;
   color: #222;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: .2rem .4rem;
+  word-wrap: break-word;
+  margin: .1rem .4rem;
 }
 
 [data-museum-item] h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 /*# sourceMappingURL=MuseumItem.css.map */

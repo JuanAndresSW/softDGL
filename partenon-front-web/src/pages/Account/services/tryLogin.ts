@@ -2,7 +2,6 @@ import ajax from "ports/ajax";
 import setSession from 'services/setSession';
 import Response from 'models/Response';
 
-/**Tries to sign-in using the provided data. */
 export default async function tryLogin(usernameOrEmail: string, password: string): Promise<Response> {
     
   const response = await ajax("POST", "auth/login", {
@@ -12,10 +11,7 @@ export default async function tryLogin(usernameOrEmail: string, password: string
     })
   });
 
-  if (response.status === 404) {
-    response.message = "Usuario o contraseña incorrecta";
-    return response;
-  }
+  if (response.status === 404) return {...response, message: "Usuario o contraseña incorrecta"}
 
   if (response.ok) {
     localStorage.clear();

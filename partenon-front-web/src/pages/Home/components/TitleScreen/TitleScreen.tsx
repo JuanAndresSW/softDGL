@@ -19,13 +19,12 @@ export default function TitleScreen(): JSX.Element {
 
   const [q,           setQ] =           useState('');
   const [page,        setPage] =        useState(0);
-  const [loading,     setLoading] =     useState(false);
  
 
-  function search() {
-    setLoading(true);
+  useEffect(search, [q])
 
-    if (q)
+  function search() {
+
     getMuseums(q, page, "museumName").then(response=>{
       if (!response?.ok) return;
 
@@ -33,25 +32,20 @@ export default function TitleScreen(): JSX.Element {
       setMuseums    (listOfMuseums.museums);
       setTotalPages (listOfMuseums.totalPages);
       setLast       (listOfMuseums.last);
-      setLoading    (false);
     });
   }
 
   return (
-    <div className="title-wrapper">
+    <div className="title-screen">
       <h1>Partenón</h1>
       <h2>Crea y visita museos, solicita turnos y diviértete.</h2>
 
-      <Section label="">
-        <form onSubmit={(e)=>{e.preventDefault();search()}}>
-          <Field type="search" placeholder="encuentra un museo..." bind={[q, setQ]} />
-          <b style={{padding: '0 1rem', cursor: 'pointer'}} title="buscar" onClick={()=>search()} >🧐</b>
+      <Section>
+        <form onSubmit={ e => {e.preventDefault(); search();} }>
 
-
+          <input type="search" placeholder="encuentra un museo..." value={q} onChange={(e)=>setQ(e.target.value)} />
 
           <Pagination page={page} setPage={setPage} totalPages={totalPages} last={last} />
-
-          <Div cond={loading}><Loading /></Div>
 
           {(museums?.length > 0)? 
 
@@ -63,7 +57,7 @@ export default function TitleScreen(): JSX.Element {
 
             :
 
-            <img src={parthenon} alt="" />
+            <img id="partenon-drawing" src={parthenon} alt="" />
           
         
           }

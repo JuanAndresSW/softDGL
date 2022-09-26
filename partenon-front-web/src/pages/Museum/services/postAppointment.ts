@@ -7,9 +7,8 @@ import getToken     from "services/getToken";
 /**Guarda un turno para un recorrido de un museo. */
 export default async function postAppointment(appointment: appointment): Promise<Response> {
     return await ajax("POST", "museums/appointments?key="+museumID, { body:JSON.stringify({
-        requestedName:       appointment.name,
+        email:       appointment.email,
         language:            appointment.language,
         appointmentDate:     appointment.date,
-        selectedTour:        appointment.tour
     }), token: getToken("access")});
 }

@@ -20,11 +20,10 @@ type props = {
  * @param props.cond    - La condición para mostrar el contenido.
  */
 export default function Div({flex=false, cond=true, wrap=true, justify="center", align="center", children, style, className}: props): JSX.Element {
-    return (
-      <div className={className} style={
-      {...style, display: flex?"flex":'', alignItems: align, justifyContent: justify, flexFlow:wrap?'wrap':'nowrap'}}>
+    return !cond? null :
 
-        {cond ? <>{children}</> : null}
-      </div>
-    )
+    <div className={className} style={
+    {...style, display: flex?"flex":'', alignItems: align, justifyContent: justify, flexFlow:wrap?'wrap':'nowrap'}}>
+      {<>{children}</>}
+    </div>
 }

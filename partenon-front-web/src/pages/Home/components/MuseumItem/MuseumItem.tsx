@@ -11,7 +11,7 @@ export default function MuseumItem({ museum }: {museum: shortMuseum}): JSX.Eleme
 
     return (
         
-        <Link data-museum-item to={"/explorar/"+museum.ID} title={museum.description}>
+        <Link data-museum-item to={"/explorar/"+museum.ID} title={museum.name}>
         
             <img src={museum.banner?.size>10?URL.createObjectURL(museum.banner):defaultPhoto} />
             

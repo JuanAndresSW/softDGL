@@ -17,7 +17,7 @@ export default class Valid {
   }
 
   public static password(password: string, setError?: Function): boolean {
-    if (password?.length <= 40 && password.length >= 8) return true;
+    if (password?.length <= 20 && password.length >= 8) return true;
     if (setError) setError("La contraseña debe ser de entre 8 y 40 caracteres");
     return false;
   }

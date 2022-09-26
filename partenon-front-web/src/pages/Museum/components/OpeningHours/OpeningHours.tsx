@@ -38,25 +38,31 @@ export default function OpeningHours({openingHours, editing}: props) {
         })
     }
 
-    return (
-        <div  className="opening-hours">
-           {editing?
+    return <div  className="opening-hours">
 
-            <Div flex align="flex-end">
-                <HourEditor day="Lunes"     bind={[monday,      setMonday]}     />
-                <HourEditor day="Martes"    bind={[tuesday,     setTuesday]}    />
-                <HourEditor day="Miércoles" bind={[wednesday,   setWednesday]}  />
-                <HourEditor day="Jueves"    bind={[thursday,    setThursday]}   />
-                <HourEditor day="Viernes"   bind={[friday,      setFriday]}     />
-                <HourEditor day="Sábado"    bind={[saturday,    setSaturday]}   />
-                <HourEditor day="Domingo"   bind={[sunday,      setSunday]}     />
-                <Button onClick={()=>sendHours()}>+ agregar horarios</Button>
-                {!success?null:<Message type="success" message="se han guardado los horarios" />}
+
+        <Div cond={editing}>
+            <Div flex><h2>Agregar horarios</h2></Div>
+
+            <Div flex>
+            <HourEditor day="Lunes"     bind={[monday,      setMonday]}     />
+            <HourEditor day="Martes"    bind={[tuesday,     setTuesday]}    />
+            <HourEditor day="Miércoles" bind={[wednesday,   setWednesday]}  />
+            <HourEditor day="Jueves"    bind={[thursday,    setThursday]}   />
+            <HourEditor day="Viernes"   bind={[friday,      setFriday]}     />
+            <HourEditor day="Sábado"    bind={[saturday,    setSaturday]}   />
+            <HourEditor day="Domingo"   bind={[sunday,      setSunday]}     />
             </Div>
 
-            :
+            <Div flex><Button onClick={()=>sendHours()}>+ agregar horarios</Button></Div>
+            <Div flex>{!success?null:<Message type="success" message="se han guardado los horarios" />}</Div>
+        </Div>
+       
 
-            <Div flex cond={openingHours !== null}>
+        <Div cond={openingHours !== null && !editing}>
+            <h2>Horarios</h2>
+
+            <Div flex justify="flex-start">
                 <Hours day="Lunes"      hours={openingHours?.monday}/>
                 <Hours day="Martes"     hours={openingHours?.tuesday}/>
                 <Hours day="Miércoles"  hours={openingHours?.wednesday}/>
@@ -65,11 +71,10 @@ export default function OpeningHours({openingHours, editing}: props) {
                 <Hours day="Sábado"     hours={openingHours?.saturday}/>
                 <Hours day="Domingo"    hours={openingHours?.sunday}/>
             </Div>
-            }
+        </Div>
+  
             
-        </div>
-
-    )
+    </div>
 }
 
 function Hours({day, hours}: {day: string, hours: string}): JSX.Element {

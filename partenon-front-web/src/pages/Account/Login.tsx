@@ -45,9 +45,8 @@ export default function Login(): JSX.Element {
 
       {loading?<Loading />:<Button type="submit">Ingresar</Button>}
 
-      <Div flex justify='space-between'>
-        <a href="about:blank" target="_blank" style={{margin:'1rem 0'}}>Olvidé mi contraseña</a>
-        <Link to="/registrarse" style={{ margin: '1rem 0'}}>Crea una nueva cuenta</Link>
+      <Div flex justify='flex-end'>
+        <Link to="/registrarse" style={{ margin: '1rem 0'}}>Crea un nuevo museo</Link>
       </Div>
 
     </Form>

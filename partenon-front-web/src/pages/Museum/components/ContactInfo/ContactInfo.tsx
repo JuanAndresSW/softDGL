@@ -25,13 +25,12 @@ type props = {
 
 export default function ContactInfo({contacts, editing}: props) {
 
-    //Contact.
     const [newContactType, setNewContactType] =     useState(contactTypes[0].value);
     const [newContactValue, setNewContactValue] =   useState();
-    const [success, setSuccess] =         useState(false);
+    const [success, setSuccess] =                   useState(false);
 
 
-    function getContactIcon(type: string) {
+    function getContactIcon(type: string): JSX.Element {
         switch (type) {
             case "EMAIL":       return <AiOutlineMail/>
             case "FACEBOOK":    return <AiFillFacebook/>
@@ -53,31 +52,36 @@ export default function ContactInfo({contacts, editing}: props) {
     }
 
 
-    return (
-        <div className="contact-info">
-            {contacts.map((c, index) => (
-                <div key={index} className="contact-item">
-                    {getContactIcon(c.type)}<p>{c.value}</p>
-                </div>
-            ))}
+    return <div className="contact-info">
+
+        <Div cond={!!contacts?.length && !editing} >
+            
+            <h2>Redes sociales</h2>
+            <Div wrap flex className="contact-list">
+                
+                {contacts?.map((c, index) => (
+                    <div key={index} className="contact-item">
+                        <p>{getContactIcon(c.type)}{c.value}</p>
+                    </div>
+                ))}
+            </Div>
+        </Div>
 
 
-            <Div cond={editing}>
+        <Div cond={editing}>
+            <Div flex><h2>Agregar redes sociales</h2></Div>
             <form onSubmit={(e)=>addContact(e)}>
 
-                <Div flex align="center">
+                <Div flex>
                     <Dropdown options={contactTypes} value={newContactType} onChange={setNewContactType}/>
                     <Field bind={[newContactValue, setNewContactValue]} />
-                    <Button type="submit">+ agregar red social</Button>
-                    <Div cond={success}>
-                        <Message type="success" message={"Se ha agregado la red social"} />
-                    </Div>
                 </Div>
+
+                <Div flex><Button type="submit">+ agregar red social</Button></Div>
+                <Div cond={success}><Message type="success" message={"Se ha agregado la red social"} /></Div>
                 
             </form>
-            </Div>
+        </Div>
               
-        </div>
-
-    )
+    </div>
 }

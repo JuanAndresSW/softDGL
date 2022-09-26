@@ -14,7 +14,7 @@ type props = {
  * @param props.maxLength - Numero máximo de caracteres. Por defecto es 50.
  * @param props.bind - Array desestructurado asociado al valor del input.
  */
-export default function Textarea({label, maxLength=50, bind, placeholder}:props):JSX.Element {
+export default function Textarea({label, maxLength, bind, placeholder}:props):JSX.Element {
     return (
         <label>{label}
         <textarea placeholder={placeholder} maxLength={maxLength} value={bind[0]?bind[0]:''} spellCheck={false}

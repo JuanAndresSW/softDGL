@@ -1,15 +1,29 @@
 .contact-info {
-    position: relative;
-    margin: 0 auto;
+    margin: 1rem;
+    font-family: monospace;
 }
 
-.contact-item {
+
+.contact-list {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 1rem;
+    align-self: center;
+}
+
+.contact-list .contact-item {
     display: flex;
     align-items: center;
     justify-content: center; 
 }
 
-.contact-info .contact-item p {
-    padding: 0 .8rem;
-    display: block;
+.contact-list .contact-item p {
+    display: flex;
+    align-items: center;
+    margin: .2rem 1rem;
+}
+
+.contact-list .contact-item p svg {
+    padding: 0 .2rem;
 }

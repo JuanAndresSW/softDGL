@@ -1,11 +1,12 @@
 .opening-hours p {
     background: #ddd;
     margin: .2rem;
-    font-family: monospace  ;
+    
     text-align: center;
     padding: .2rem .4rem;
     border-radius: 0px;
 }
 .opening-hours {
     margin: 2rem 0;
+    font-family: monospace;
 }

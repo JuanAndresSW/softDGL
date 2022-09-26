@@ -1,82 +1,73 @@
 import React, { useState } from "react";
 import { Div } from "components/wrappers";
-import { Button, Field, Dropdown, Message, DateTime } from "components/formComponents";
-import {languages} from "utilities/constants";
-import postTour from "../../services/postTour";
-import postAppointment from "../../services/postAppointment";
+import { Button, Field, Message, Textarea } from "components/formComponents";
+import tour from "pages/Museum/models/tour";
+
 import "./Tours.css";
+import postTour from "pages/Museum/services/postTour";
 
 
 type props = {
-    tours:   string[],
-    editing: boolean
+    tours:   tour[],
+    editing: boolean,
+    setTours: Function
 }
 
 
-export default function Tours({tours, editing}: props) {
+export default function Tours({tours, editing, setTours}: props) {
+
 
     const [success,     setSuccess] =   useState(false);
-    const [newTourName, setNewTourName] = useState();
+
+    const [tourName, setTourName]                           = useState();
+    const [tourDescription, setTourDescription]             = useState();
+    const [tourDurationInMinutes, setTourDurationInMinutes] = useState();
+
 
     function addTour() {
-        postTour(newTourName).then(response=>{
-            if (response.ok) setSuccess(true);
+        setTours({
+            name: tourName,
+            description: tourDescription,
+            duration: tourDurationInMinutes
         })
-    }
 
-    return <div  className="tours">
+        //TODO: make it work with the actual postTour service, instead of local state.
+        //postTour(null).then(response=>{if (response.ok) setSuccess(true);})
+    }
+    
+
+    return <div className="tours">
         
         <Div cond={tours?.length>0}>
-            {tours?.map((tour, i) => <Tour name={tour} key={i} />)}
+            <h2>Recorridos</h2>
+            <Div flex justify="flex-start">
+                {tours?.map((tour, i) => <Tour tour={tour} key={i} />)}
+            </Div>
         </Div>
 
         <Div flex cond={editing} align="flex-end">
-            <Field bind={[newTourName, setNewTourName]} label="nombre del recorrido" />
+            <Field bind={[tourName, setTourName]} label="nombre del recorrido" />
+            <Textarea label="descripción del recorrido" bind={[tourDescription, setTourDescription]} />
+            <Field bind={[tourDurationInMinutes, setTourDurationInMinutes]} label="duración en minutos" />
             <Button onClick={()=>addTour()} >+ agregar recorrido</Button>
         </Div>
 
-        <Div cond={success}><Message type="success" message="Se ha creado el recorrido" /></Div>
+        <Div cond={success}><Message type="success" message={"Se ha creado el recorrido "+tourName} /></Div>
             
     </div>
 }
 
-function Tour({name}: {name: string}): JSX.Element {
-    
-    const [addingNewAppointment, setAddingNewAppointment] = useState(false);
-    const [date, setDate] = useState('');
-    const [language, setLanguage] = useState("Español");
-    const [requestName, setRequestName] = useState();
 
-    const [success, setSuccess] = useState(false);
 
-    function saveNewAppointment() {
-        postAppointment({
-            language: language,
-            date:   date,
-            name: requestName,
-            tour: name
-        }).then(response=>setSuccess(response.ok))
-    }
+
+function Tour({tour}: {tour: tour}): JSX.Element {
 
     return <div className="tour">
 
-        <Div flex>
-            <h2>{name}</h2>
-            <Button onClick={()=>setAddingNewAppointment(!addingNewAppointment)} >
-                {addingNewAppointment?"cerrar":"+ pedir turno"}
-            </Button>
-        </Div>
+        <h2>{tour.name}</h2>
+        <p><span>Duración: {tour.duration} minutos</span></p>
+        <p>{tour.description}</p>
         
 
-        <Div flex cond={addingNewAppointment}>
-            <DateTime value={date} onChange={setDate} />
-            <Dropdown options={languages} value={language} onChange={setLanguage} />
-            <Field label="Tu nombre" bind={[requestName, setRequestName]} />
-            <Button onClick={()=>saveNewAppointment()}>enviar</Button>
-            
-            <Div cond={success}>
-            <Message type="success" message="Se ha registrado tu turno" />
-            </Div>
-        </Div>
     </div>
 }

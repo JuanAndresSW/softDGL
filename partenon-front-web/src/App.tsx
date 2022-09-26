@@ -26,12 +26,12 @@ export default function App(): JSX.Element {
     <Suspense fallback={<SplashScreen />}>
         <Routes>
 
-            <Route index                element={<Home  auth={auth} />} />
-            <Route path="/mi-museo"     element={auth?  <Museum  hasEditingPermissions />:<Navigate to="/"/>} />
-            <Route path="/explorar/:id" element={<Museum />} />     
+            <Route index                  element={<Home   auth={auth} />} />
+            <Route path="/mi-museo/*"     element={auth?<Museum hasEditingPermissions />:<Navigate to="/"/>} />
+            <Route path="/explorar/:id/*" element={<Museum />} />     
             
             
-            <Route path="/registrarse"  element={<SignUp/>} /> 
+            <Route path="/registrarse"  element={!auth? <SignUp/> : <Navigate to="/"/>} /> 
             <Route path="/ingresar"     element={!auth? <Login/>: <Navigate to="/"/>} />
             
 

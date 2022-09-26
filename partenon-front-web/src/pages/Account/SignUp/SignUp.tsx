@@ -77,12 +77,9 @@ export default function SignUp(): JSX.Element {
     setLoading(true);
     postAccount(account).then(response=>{
       setLoading(false);
-      if (!response.ok) return setError(response.message);
 
-      tryLogin(username, password).then(() => {
-        setError("");
-        navigate("/mi-museo");
-      });
+      if (!response.ok) return setError(response.content);
+      else tryLogin(username, password).then(() => window.location.reload());
       
     })
   }
