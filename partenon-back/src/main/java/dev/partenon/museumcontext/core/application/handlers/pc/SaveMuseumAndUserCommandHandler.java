@@ -1,0 +1,46 @@
+package dev.partenon.museumcontext.core.application.handlers.pc;
+
+import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
+import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.doamin.Museum;
+import dev.partenon.museumcontext.core.doamin.SaveMuseumAndUserCommand;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+
+@Slf4j
+@Service
+@Transactional
+/**Maneja el comando de SaveMuseumAndUserResource*/
+public class SaveMuseumAndUserCommandHandler implements CommandHandler<SaveMuseumAndUserCommand> {
+    @Autowired
+    private MuseumRepository repository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+
+    @Override
+    public void handle(SaveMuseumAndUserCommand command) throws Exception {
+        this.verifyIndexs(command);
+
+        var museum = Museum.create(command, passwordEncoder);
+        repository.save(museum);
+    }
+
+    /**Comprueba que los indices del usuario y museo ya no esten registrados*/
+    private void verifyIndexs(SaveMuseumAndUserCommand command) throws Exception {
+        var userWithUsername = repository.findByUserUsernameOrUserEmail
+                (command.getUsername(), command.getUsername());
+        if (!userWithUsername.isEmpty())
+            throw new Exception("Username ya se encuentra en uso");
+
+        var userWithEmail = repository.findByUserUsernameOrUserEmail
+                (command.getEmail(), command.getEmail());
+        if (!userWithEmail.isEmpty())
+            throw new Exception("email ya se encuentra en uso");
+
+    }
+}
