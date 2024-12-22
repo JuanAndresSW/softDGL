@@ -1,0 +1,19 @@
+.museum-options {
+    background: #fff;
+    font-size: 1.4rem;
+    color: #555;
+}
+.museum-options div a {color: #555;}
+.museum-options div {
+    padding: .5rem;
+    cursor:pointer;
+}
+
+.museum-options :first-child {
+    margin-right: auto;
+}
+
+.museum-options p {
+    margin: 0;
+    font-size: 1.4rem;
+}

@@ -1,0 +1,40 @@
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+nav > a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-bottom: 2px solid gainsboro;
+  padding: 5px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #222;
+  cursor: pointer;
+}
+
+nav > a.active {
+  border: none;
+  border-bottom: 3px solid #0e46ff;
+}
+
+nav > a svg {
+  display: block;
+  margin-right: .2rem;
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=NavBar.css.map */
