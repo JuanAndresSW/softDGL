@@ -1,0 +1,35 @@
+[data-expo-piece] {
+    display: flex;
+    width: max-content;
+    max-width: 500px;
+    margin: 1rem;
+   
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+  
+    div {
+        overflow: hidden;
+    }
+
+    img {
+        display: block;
+        height: 160px;
+        border-right: 1px solid #ddd;
+    }
+
+    h2, p {
+        text-align: start;
+        color: #222;
+        word-wrap: break-word;
+        margin: .1rem .4rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

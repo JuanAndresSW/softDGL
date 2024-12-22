@@ -1,0 +1,38 @@
+[data-expo-piece] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 500px;
+  margin: 1rem;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+[data-expo-piece] div {
+  overflow: hidden;
+}
+
+[data-expo-piece] img {
+  display: block;
+  height: 160px;
+  border-right: 1px solid #ddd;
+}
+
+[data-expo-piece] h2, [data-expo-piece] p {
+  text-align: start;
+  color: #222;
+  word-wrap: break-word;
+  margin: .1rem .4rem;
+}
+
+[data-expo-piece] h2 {
+  font-size: 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/*# sourceMappingURL=Piece.css.map */
